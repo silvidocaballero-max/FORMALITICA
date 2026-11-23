@@ -6,6 +6,8 @@
 - Algunas formaciones llevan enlace de afiliado: Formalítica recibe una comisión y el usuario paga el mismo precio. La comisión no influye en la nota.
 - Cada análisis indica la fecha de revisión y enlaza sus fuentes. Los precios y condiciones pueden cambiar: conviene comprobarlos en la página oficial.
 
+Cada página tiene una versión en Markdown: añade `index.md` a su dirección (por ejemplo https://compratuformacion.com/formaciones/cake-designer-opiniones/index.md).
+
 ## Análisis publicados
 
 - [Máster en Cursos Online de Marcelo Rodríguez: opiniones y análisis](https://compratuformacion.com/formaciones/master-en-cursos-online-opiniones/): curso para crear y vender cursos online, 227 US$ en un pago. Nota: 16/20 puntos, recomendable con reservas. Revisado en noviembre de 2026.
@@ -20,7 +22,8 @@
 ## Sobre la web
 
 - [Portada](https://compratuformacion.com/): todas las formaciones analizadas, el método de los 20 puntos y el formulario de contacto.
-- [Contacto](https://compratuformacion.com/#contacto): contar una experiencia, hacer una consulta o proponer una formación para analizar.
+- [Sobre nosotros](https://compratuformacion.com/sobre-nosotros/): quién escribe la web, cómo se analiza cada formación y cómo se financia sin que la nota se pague.
+- [Contacto](https://compratuformacion.com/contacto/): contar una experiencia, hacer una consulta o proponer una formación para analizar. Email: hola@compratuformacion.com
 
 ## Optional
 

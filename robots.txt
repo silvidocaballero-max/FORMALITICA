@@ -1,5 +1,11 @@
 # Formalítica · robots.txt
+#
+# Señales de contenido (https://contentsignals.org):
+#   search   = indexar y mostrar en resultados de búsqueda: sí
+#   ai-input = usar el contenido para responder en tiempo real (buscadores de IA, con cita): sí
+#   ai-train = usar el contenido para entrenar modelos de IA: no
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # Buscadores
