@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>El Método Mikel Vázquez (trading Wyckoff y VSA): opiniones y análisis | Formalítica</title>
+<meta name="description" content="El Método Mikel Vázquez para ganar en el trading, analizado con 20 puntos: temario Wyckoff y VSA, autor, valoraciones, pros, contras y opinión personal.">
+<link rel="canonical" href="https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Formalítica">
+<meta property="og:type" content="article">
+<meta property="og:title" content="El Método Mikel Vázquez (trading Wyckoff y VSA): opiniones y análisis | Formalítica">
+<meta property="og:description" content="El Método Mikel Vázquez para ganar en el trading, analizado con 20 puntos: temario Wyckoff y VSA, autor, valoraciones, pros, contras y opinión personal.">
+<meta property="og:url" content="https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/">
+<meta property="og:image" content="https://compratuformacion.com/og/metodo-mikel-vazquez-opiniones.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El Método Mikel Vázquez (trading Wyckoff y VSA): opiniones y análisis | Formalítica">
+<meta property="article:modified_time" content="2026-11-23">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* =========================================================
+   FORMALÍTICA · Pantalla de inicio (v3)
+   Concepto: un "catálogo vivo". Columnas de cursos y mentorías
+   que se deslizan sin parar, mezclando fotos y fichas, sobre
+   musgo oscuro con llamadas a la acción en dorado neón.
+   ========================================================= */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  color-scheme: dark;
+  --bg: #0D1810;
+  --bg-2: #122016;
+  --surface: #182A1D;
+  --surface-2: #1F3525;
+  --line: #2C4733;
+  --ink: #EDF2E6;
+  --muted: #A6B79F;
+  --moss: #7E9A58;
+  --sage: #BFD09C;
+  --gold: #FFD23F;
+  --gold-hi: #FFE88A;
+  --glow: rgba(255, 210, 63, .55);
+
+  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --max: 1240px;
+}
+
+/* ---------- 2. Base ---------- */
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 1rem/1.7 var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.04; margin: 0; text-wrap: balance; }
+em { font-style: italic; color: var(--gold); }
+p { margin: 0; }
+a { color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.wrap {
+  max-width: var(--max); margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow { font: 500 .76rem/1.3 var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--sage); }
+
+/* Botones dorado neón */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 26px; border-radius: 999px; border: 0;
+  font: 700 1rem/1 var(--font-body); text-decoration: none; cursor: pointer;
+  transition: transform .2s ease, box-shadow .25s ease, background .2s ease;
+}
+.btn-gold { background: var(--gold); color: #1B1600; box-shadow: inset 0 0 0 1px var(--gold-hi), 0 0 16px var(--glow), 0 0 44px rgba(255,210,63,.22); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--gold-hi), 0 0 24px var(--glow), 0 0 72px rgba(255,210,63,.4); }
+.btn-line { background: transparent; color: var(--gold); box-shadow: inset 0 0 0 1.5px var(--gold); }
+.btn-line:hover { background: rgba(255,210,63,.1); box-shadow: inset 0 0 0 1.5px var(--gold), 0 0 22px rgba(255,210,63,.25); }
+
+/* ---------- 3. Navegación ---------- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: rgba(13,24,16,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.logo { display: flex; align-items: center; gap: 10px; font: 700 1.45rem/1 var(--font-display); color: var(--ink); text-decoration: none; }
+.logo svg { width: 28px; height: 28px; flex: none; }
+.nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .93rem; }
+.nav-links a:hover { color: var(--gold); }
+.nav .btn { padding: 11px 18px; font-size: .9rem; }
+@media (max-width: 900px) { .nav-links { display: none; } }
+
+/* ---------- 4. Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  padding-block: clamp(36px, 5vw, 64px);
+  background:
+    radial-gradient(800px 480px at 90% 0%, rgba(126,154,88,.26), transparent 70%),
+    radial-gradient(520px 320px at 0% 100%, rgba(255,210,63,.07), transparent 70%),
+    var(--bg);
+}
+.hero .wrap { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(32px, 5vw, 60px); align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); letter-spacing: -.01em; }
+.hero h1 em { text-shadow: 0 0 28px rgba(255,210,63,.35); }
+.lead { font-size: clamp(1.05rem, 1.5vw, 1.15rem); color: var(--muted); max-width: 36em; }
+.lead b { color: var(--ink); font-weight: 600; }
+
+/* Selector de temas: ilumina las fichas que coinciden */
+.pick { display: grid; gap: 12px; }
+.pick-label { font-weight: 600; font-size: .95rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: 600 .88rem/1 var(--font-body); color: var(--ink);
+  background: rgba(237,242,230,.05); border: 1px solid var(--line);
+  padding: 10px 14px; border-radius: 99px; cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.chip:hover, .chip[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); background: rgba(255,210,63,.08); box-shadow: 0 0 14px rgba(255,210,63,.25); }
+.chip.mentor { border-style: dashed; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.trust { display: flex; flex-wrap: wrap; gap: 10px 22px; font: 500 .8rem/1.4 var(--font-mono); color: var(--muted); }
+.trust span { display: inline-flex; gap: 8px; align-items: center; }
+.trust span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--glow); }
+
+/* ---------- Catálogo vivo: columnas que se deslizan ---------- */
+.wall {
+  position: relative; height: 620px; min-width: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+.col { min-width: 0; }
+.track { display: grid; gap: 12px; animation: up 46s linear infinite; }
+.col:nth-child(2) .track { animation-duration: 54s; animation-direction: reverse; }
+.col:nth-child(3) .track { animation-duration: 40s; }
+.wall:hover .track, .wall.focus .track { animation-play-state: paused; }
+@keyframes up { to { transform: translateY(calc(-50% - 6px)); } }
+
+.card {
+  position: relative; overflow: hidden; border-radius: 16px; margin: 0;
+  border: 1px solid var(--line); background: var(--surface);
+  transition: border-color .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+/* Ficha con foto */
+.card.photo { height: 230px; }
+.card.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,14,10,.3) 0%, transparent 30%, transparent 50%, rgba(8,14,10,.88) 100%); pointer-events: none; }
+.card.photo figcaption { position: absolute; left: 12px; right: 12px; bottom: 10px; z-index: 2; display: grid; gap: 2px; }
+.card.photo figcaption b { font: 500 1.2rem/1.1 var(--font-display); color: #fff; }
+.card.photo figcaption span { font: 500 .7rem/1.3 var(--font-mono); color: #DDE5D5; }
+.rec { position: absolute; top: 10px; left: 12px; z-index: 2; display: inline-flex; gap: 6px; align-items: center; font: 500 .66rem/1 var(--font-mono); letter-spacing: .08em; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.7); }
+.rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF4D3D; box-shadow: 0 0 8px #FF4D3D; animation: blink 1.2s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+/* Ficha tipográfica */
+.card.info { padding: 16px; display: grid; gap: 10px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); }
+.card.info .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.ic { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; background: rgba(191,208,156,.1); color: var(--sage); flex: none; }
+.ic svg { width: 21px; height: 21px; }
+.type { font: 600 .68rem/1 var(--font-body); letter-spacing: .04em; padding: 6px 9px; border-radius: 99px; white-space: nowrap; }
+.type.curso { background: rgba(191,208,156,.12); color: var(--sage); }
+.type.mentoria { color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+.type.herramienta { background: rgba(155,212,122,.12); color: var(--ok); }
+.card.info .cat { font: 500 .66rem/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.card.info h3 { font-size: 1.22rem; line-height: 1.12; }
+.card.info .meta { font: 500 .72rem/1.3 var(--font-mono); color: var(--muted); }
+.card.info.feature { border-color: rgba(255,210,63,.5); }
+a.card.real { color: inherit; text-decoration: none; cursor: pointer; border-color: var(--gold); box-shadow: 0 0 0 1px rgba(255,210,63,.35), 0 0 26px -8px var(--glow); }
+a.card.real:hover, a.card.real:focus-visible { box-shadow: 0 0 0 1px var(--gold), 0 0 30px -4px var(--glow); outline: none; }
+a.card.real .go-real { font: 600 .74rem/1 var(--font-body); color: var(--gold); }
+.seal { display: inline-flex; gap: 6px; align-items: center; width: fit-content; font: 600 .7rem/1 var(--font-body); color: var(--gold); }
+.seal::before { content: "★"; text-shadow: 0 0 8px var(--glow); }
+
+/* Al elegir un tema, se iluminan sus fichas */
+.wall.focus .card { filter: saturate(.35) brightness(.5); }
+.wall.focus .card.on { filter: none; border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 0 30px -6px var(--glow); }
+.wall-note { margin-top: 10px; font: 500 .72rem/1.4 var(--font-mono); color: var(--muted); text-align: right; }
+
+@media (max-width: 980px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .wall { height: 520px; }
+}
+@media (max-width: 560px) {
+  .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); height: 480px; }
+  .col:nth-child(3) { display: none; }
+  .card.photo { height: 190px; }
+  .card.info h3 { font-size: 1.08rem; }
+}
+
+/* ---------- 5. Cinta de temas ---------- */
+.ticker { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding-block: 18px; }
+.ticker-track { display: flex; width: max-content; animation: slide 50s linear infinite; }
+.ticker-track span { display: inline-flex; align-items: center; gap: 36px; padding-right: 36px; font: italic 500 1.45rem/1 var(--font-display); color: var(--sage); white-space: nowrap; }
+.ticker-track span::after { content: "✦"; font-style: normal; font-size: .85rem; color: var(--gold); text-shadow: 0 0 8px var(--glow); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+footer { padding-block: 40px; color: var(--muted); font-size: .85rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* =========================================================
+   FORMACIONES: fichas con checklist ✓ / ✗
+   ========================================================= */
+:root { --ok: #9BD47A; --bad: #F08A6E; --surface-3: #243C2B; }
+section { padding-block: clamp(72px, 9vw, 120px); }
+.section-head { display: grid; gap: 16px; max-width: 720px; margin-bottom: 40px; }
+.section-head h2 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+.section-head p { color: var(--muted); font-size: 1.06rem; }
+.sample-note { display: inline-flex; width: fit-content; font: 500 .76rem/1.4 var(--font-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: 99px; padding: 7px 14px; }
+
+/* Leyenda */
+.legend { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 28px; font-size: .9rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.mark { width: 26px; height: 26px; border-radius: 50%; display: inline-grid; place-items: center; font: 700 .85rem/1 var(--font-body); flex: none; }
+.mark.ok { background: rgba(155,212,122,.15); color: var(--ok); box-shadow: inset 0 0 0 1px rgba(155,212,122,.5); }
+.mark.bad { background: rgba(240,138,110,.15); color: var(--bad); box-shadow: inset 0 0 0 1px rgba(240,138,110,.5); }
+.mark.na { background: rgba(237,242,230,.06); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
+.mark.pend { background: rgba(255,210,63,.08); color: var(--gold); box-shadow: inset 0 0 0 1px rgba(255,210,63,.45); }
+.ck-row .res.pend { color: var(--gold); }
+.pips i.pend { background: rgba(255,210,63,.35); }
+.verdict.v0 { background: transparent; color: var(--gold); box-shadow: inset 0 0 0 1px rgba(255,210,63,.5); }
+.ej { font: 600 .66rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--line); border-radius: 99px; padding: 5px 8px; }
+.opinion .pending { color: var(--muted); font-style: italic; }
+.key { color: var(--gold); text-shadow: 0 0 8px var(--glow); }
+
+/* Filtro y tarjetas resumen */
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.f-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.f-card {
+  text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 22px; display: grid; gap: 14px; align-content: start;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.f-card:hover { transform: translateY(-3px); border-color: var(--moss); }
+.f-card[aria-pressed="true"] { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 0 34px -10px var(--glow); }
+.f-card .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.f-card .cat { font: 500 .68rem/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.f-card h3 { font-size: 1.45rem; }
+.f-card .meta { font-size: .88rem; color: var(--muted); }
+.score-line { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.score { font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+.score b { font-size: 2.6rem; font-weight: 500; color: var(--gold); text-shadow: 0 0 16px var(--glow); }
+.score span { font-size: 1.1rem; color: var(--muted); }
+.verdict { font: 600 .78rem/1 var(--font-body); padding: 7px 11px; border-radius: 99px; background: rgba(237,242,230,.08); white-space: nowrap; }
+.verdict.v1 { background: var(--gold); color: #1B1600; box-shadow: 0 0 12px var(--glow); }
+.verdict.v2 { background: rgba(155,212,122,.16); color: var(--ok); }
+.verdict.v3 { background: rgba(255,210,63,.12); color: var(--gold); }
+.verdict.v4 { background: rgba(240,138,110,.16); color: var(--bad); }
+/* Píxeles: un cuadradito por punto analizado */
+.pips { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; }
+.pips i { height: 8px; border-radius: 2px; background: rgba(237,242,230,.08); }
+.pips i.ok { background: var(--ok); }
+.pips i.bad { background: var(--bad); }
+.pips i.na { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+.alert { font-size: .82rem; color: var(--bad); display: flex; gap: 6px; align-items: center; }
+.alert.none { color: var(--ok); }
+.f-card .go { font-weight: 700; font-size: .9rem; color: var(--gold); }
+@media (max-width: 920px) { .f-grid { grid-template-columns: 1fr; } }
+
+/* Ficha completa */
+.review { margin-top: 44px; border: 1px solid var(--line); border-radius: 24px; background: var(--bg-2); overflow: hidden; scroll-margin-top: 90px; }
+.rv-head { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; padding: clamp(22px, 4vw, 40px); border-bottom: 1px solid var(--line); background: radial-gradient(600px 260px at 100% 0%, rgba(255,210,63,.08), transparent 70%); }
+.rv-info { display: grid; gap: 14px; min-width: 0; align-content: start; }
+.rv-info h3 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 500 .8rem/1.4 var(--font-mono); color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 500; }
+.rv-score { display: grid; gap: 12px; align-content: start; padding: 22px; border-radius: 18px; border: 1px solid var(--gold); background: var(--surface); box-shadow: 0 0 40px -18px var(--glow); }
+.rv-score .score b { font-size: 3.6rem; }
+.rv-score small { color: var(--muted); font-size: .85rem; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .85rem; color: var(--muted); }
+@media (max-width: 860px) { .rv-head { grid-template-columns: 1fr; } }
+
+/* Tabla de checks */
+.checks { padding: clamp(14px, 3vw, 32px); }
+.ck-head, .ck-row { display: grid; grid-template-columns: minmax(0, 1.2fr) 118px minmax(0, 1.4fr); gap: 16px; align-items: center; }
+.ck-head { padding: 0 16px 10px; font: 500 .7rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.ck-block { margin-top: 18px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
+.ck-block h4 { margin: 0; padding: 12px 16px; font: 600 .82rem/1.2 var(--font-body); letter-spacing: .04em; color: var(--sage); background: var(--surface-3); display: flex; justify-content: space-between; gap: 10px; }
+.ck-block h4 span { font-family: var(--font-mono); font-weight: 500; color: var(--muted); }
+.ck-row { padding: 13px 16px; border-top: 1px solid var(--line); }
+.ck-row .pt { font-weight: 500; font-size: .95rem; }
+.ck-row .res { display: flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 600; white-space: nowrap; }
+.ck-row .res.ok { color: var(--ok); } .ck-row .res.bad { color: var(--bad); } .ck-row .res.na { color: var(--muted); }
+.ck-row .nt { font-size: .88rem; color: var(--muted); }
+.ck-row.fail-key { background: rgba(240,138,110,.06); }
+@media (max-width: 640px) {
+  .ck-head { display: none; }
+  .ck-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .ck-row .nt { grid-column: 1 / -1; }
+  .ck-row .nt:empty { display: none; }
+}
+
+/* Experiencias y opinión */
+.rv-body { display: grid; gap: 28px; padding: 0 clamp(14px, 3vw, 32px) clamp(22px, 4vw, 40px); }
+.rv-body h4 { font: 500 1.9rem/1.1 var(--font-display); margin: 0 0 16px; }
+.exp-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.exp { margin: 0; padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 12px; }
+.exp blockquote { margin: 0; font: italic 500 1.08rem/1.5 var(--font-display); }
+.exp figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .85rem; color: var(--muted); }
+.exp figcaption b { color: var(--ink); }
+.verified { color: var(--ok); font-weight: 600; }
+.empty { padding: 22px; border-radius: 16px; border: 1px dashed var(--line); color: var(--muted); display: grid; gap: 12px; justify-items: start; }
+@media (max-width: 760px) { .exp-list { grid-template-columns: 1fr; } }
+.opinion { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 20px; padding: 26px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.opinion .av { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font: 600 1.3rem/1 var(--font-display); color: var(--gold); background: rgba(255,210,63,.1); border: 1px solid rgba(255,210,63,.45); }
+.opinion .txt { display: grid; gap: 14px; max-width: 68ch; }
+.opinion .by { font: 500 .78rem/1.4 var(--font-mono); color: var(--muted); }
+.opinion p { color: #D7E0CF; }
+@media (max-width: 520px) { .opinion { grid-template-columns: 1fr; } }
+.aff-box { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 24px; border-radius: 18px; border: 1px solid rgba(255,210,63,.4); background: rgba(255,210,63,.05); }
+.aff-box p { font-size: .9rem; color: var(--muted); }
+.aff-box p b { color: var(--ink); }
+.aff-box .cta { display: grid; gap: 8px; justify-items: center; }
+.aff-box small { font: 500 .7rem/1 var(--font-mono); color: var(--muted); letter-spacing: .06em; }
+@media (max-width: 680px) { .aff-box { grid-template-columns: 1fr; } .aff-box .cta { justify-items: stretch; } }
+
+/* Bloques de presentación de la formación */
+.promo { display: grid; gap: 18px; padding: clamp(14px, 3vw, 32px); border-bottom: 1px solid var(--line); }
+.summary { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.p-card { padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 10px; align-content: start; min-width: 0; }
+.p-card h4 { margin: 0; font: 500 1.3rem/1.15 var(--font-display); }
+.p-card p { color: #D7E0CF; font-size: .98rem; }
+.p-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: .92rem; color: var(--muted); }
+.p-card li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+.p-card li::before { font-weight: 700; }
+.yes li::before { content: "✓"; color: var(--ok); }
+.no li::before { content: "✕"; color: var(--bad); }
+.inc li::before { content: "◆"; color: var(--gold); font-size: .7rem; padding-top: 5px; }
+.p-card .src { font: 500 .66rem/1 var(--font-mono); letter-spacing: .06em; color: var(--gold); border: 1px dashed rgba(255,210,63,.5); border-radius: 99px; padding: 3px 7px; margin-left: 6px; white-space: nowrap; }
+.p-label { font: 500 .7rem/1.2 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--sage); }
+.cta-inline { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.cta-inline small { font: 500 .7rem/1.3 var(--font-mono); color: var(--muted); letter-spacing: .05em; }
+.offer { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 16px; }
+.price-card { border-color: rgba(255,210,63,.55); background: linear-gradient(180deg, rgba(255,210,63,.08), transparent 70%), var(--surface); }
+.price { font: 500 3rem/1 var(--font-display); color: var(--gold); text-shadow: 0 0 16px var(--glow); font-variant-numeric: tabular-nums; }
+.guarantee { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: center; padding: 12px; border-radius: 12px; background: rgba(155,212,122,.08); color: var(--ink); font-size: .9rem; }
+.guarantee b { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: rgba(155,212,122,.18); color: var(--ok); font: 700 .8rem/1 var(--font-mono); }
+.pc2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.videos-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 10px; }
+.videos-head h4 { margin: 0; font: 500 1.6rem/1.1 var(--font-display); }
+.vtag { font-size: .82rem; color: var(--muted); }
+.vgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.vcard {
+  position: relative; display: grid; align-content: end; gap: 4px; aspect-ratio: 4 / 5; max-width: 100%;
+  padding: 16px; border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink);
+  border: 1px solid var(--line);
+  background: radial-gradient(120% 80% at 50% 0%, rgba(126,154,88,.35), transparent 60%), linear-gradient(180deg, var(--surface-2), #0A130D);
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.vcard:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 0 30px -10px var(--glow); }
+.vcard .play { position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #1B1600; box-shadow: 0 0 22px var(--glow); }
+.vcard .play svg { width: 22px; height: 22px; margin-left: 3px; }
+.vcard .rec { top: 12px; left: 12px; }
+.vcard b { font: 500 1.4rem/1.1 var(--font-display); }
+.vcard span.s { font: 500 .7rem/1.3 var(--font-mono); color: var(--muted); }
+.vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.vq { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 6px 18px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+.vthumb { grid-row: 1 / 3; position: relative; display: block; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 12px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); transition: border-color .25s ease, box-shadow .25s ease; }
+.vthumb:hover { border-color: var(--gold); box-shadow: 0 0 24px -8px var(--glow); }
+.vthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vthumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,14,10,.4), transparent 35%, transparent 60%, rgba(8,14,10,.5)); }
+.vthumb .rec { z-index: 2; font-size: .6rem; }
+.vthumb .play { position: absolute; z-index: 2; left: 50%; top: 55%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #1B1600; box-shadow: 0 0 18px var(--glow); }
+.vthumb .play svg { width: 18px; height: 18px; margin-left: 2px; }
+.vq blockquote { margin: 0; font: italic 500 1.08rem/1.45 var(--font-display); }
+.vq figcaption { align-self: end; font-size: .85rem; color: var(--muted); }
+.vq figcaption b { color: var(--ink); }
+@media (max-width: 980px) { .vgrid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .vq { grid-template-columns: 96px minmax(0, 1fr); } .vq blockquote { font-size: 1rem; } }
+@media (max-width: 980px) { .summary { grid-template-columns: 1fr 1fr; } .summary .p-card:first-child { grid-column: 1 / -1; } .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .summary, .offer, .pc2 { grid-template-columns: 1fr; } .vcard { aspect-ratio: 16 / 10; } }
+
+.final { display: grid; gap: 16px; padding: clamp(18px, 3vw, 28px); border-radius: 20px; border: 1px solid var(--gold); background: linear-gradient(180deg, rgba(255,210,63,.07), transparent 50%), var(--surface); box-shadow: 0 0 50px -24px var(--glow); }
+.final-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
+.final-top h4 { margin: 8px 0 0; font: italic 500 clamp(1.8rem, 3.6vw, 2.5rem)/1.05 var(--font-display); color: var(--gold); text-shadow: 0 0 20px rgba(255,210,63,.3); }
+.final .pc2 .p-card { background: var(--bg-2); }
+.rec-text { font-size: 1.08rem; color: var(--ink); max-width: 70ch; }
+
+.sources { padding: 22px 24px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 10px; }
+.sources h4 { margin: 0 !important; font: 500 1.5rem/1.1 var(--font-display) !important; }
+.src-note { font-size: .85rem; color: var(--muted); }
+.sources ol { margin: 0; padding-left: 22px; display: grid; gap: 8px; font-size: .92rem; }
+.sources li a { color: var(--ink); text-decoration-color: rgba(255,210,63,.5); overflow-wrap: anywhere; }
+.sources li a:hover { color: var(--gold); }
+.stype { margin-left: 10px; font: 500 .66rem/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--sage); border: 1px solid var(--line); border-radius: 99px; padding: 4px 8px; white-space: nowrap; }
+.stype.aff { color: var(--gold); border-color: rgba(255,210,63,.45); }
+
+/* Comparativas (próximamente) */
+.soon { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: clamp(24px, 4vw, 40px); border-radius: 24px; border: 1px solid var(--line); background: var(--surface); }
+.soon h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.soon p { color: var(--muted); margin-top: 10px; max-width: 60ch; }
+.soon .vs { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; font: italic 500 2rem/1 var(--font-display); color: var(--gold); border: 1px solid var(--gold); box-shadow: 0 0 30px -8px var(--glow); }
+@media (max-width: 600px) { .soon { grid-template-columns: 1fr; } }
+
+footer .disclosure { flex-basis: 100%; max-width: 80ch; }
+footer .legal-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer .legal-links a { color: var(--muted); text-decoration: none; }
+footer .legal-links a:hover { color: var(--gold); }
+
+/* ---------- Contacto ---------- */
+.contact-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.contact-info { display: grid; gap: 18px; min-width: 0; }
+.contact-info ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.contact-info li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; color: var(--muted); font-size: .95rem; }
+.contact-info li b { color: var(--ink); display: block; }
+.contact-info li span:first-child { color: var(--gold); }
+.mail-box { display: grid; gap: 4px; padding: 16px 18px; border-radius: 14px; border: 1px dashed var(--line); }
+.mail-box span { font-size: .82rem; color: var(--muted); }
+.mail-box b { font: 500 1rem/1.4 var(--font-mono); overflow-wrap: anywhere; user-select: all; }
+.cform { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: clamp(20px, 4vw, 34px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-width: 0; }
+.cform .field { display: grid; gap: 7px; min-width: 0; }
+.cform .full { grid-column: 1 / -1; }
+.cform label { font-weight: 600; font-size: .9rem; }
+.cform input[type="text"], .cform input[type="email"], .cform select, .cform textarea {
+  width: 100%; font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+.cform input:focus, .cform select:focus, .cform textarea:focus { outline: none; border-color: var(--gold); }
+.cform textarea { min-height: 120px; resize: vertical; }
+.check { grid-column: 1 / -1; display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; font-size: .87rem; color: var(--muted); font-weight: 400 !important; }
+.check input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--gold); }
+.err { color: var(--bad); font-size: .82rem; min-height: 1em; }
+.cform .btn { grid-column: 1 / -1; }
+.cform .fine { grid-column: 1 / -1; font-size: .78rem; color: var(--muted); }
+.result { grid-column: 1 / -1; display: grid; gap: 12px; padding: 18px; border-radius: 14px; background: rgba(255,210,63,.07); border: 1px solid rgba(255,210,63,.4); }
+.result pre { margin: 0; white-space: pre-wrap; font: 500 .82rem/1.5 var(--font-mono); color: var(--ink); background: var(--bg); border-radius: 10px; padding: 12px; max-height: 220px; overflow: auto; }
+.result .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.result .btn { padding: 11px 18px; font-size: .9rem; grid-column: auto; }
+@media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .cform { grid-template-columns: 1fr; } }
+
+/* ---------- Legal ---------- */
+.legal { display: grid; gap: 12px; }
+.legal details { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.legal summary { cursor: pointer; padding: 18px 22px; font: 500 1.35rem/1.2 var(--font-display); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.legal summary::-webkit-details-marker { display: none; }
+.legal summary::after { content: "+"; color: var(--gold); font-family: var(--font-body); }
+.legal details[open] summary::after { content: "–"; }
+.legal .lbody { padding: 0 22px 22px; display: grid; gap: 12px; color: var(--muted); font-size: .93rem; max-width: 80ch; }
+.legal .lbody h5 { margin: 8px 0 0; font: 600 .95rem/1.3 var(--font-body); color: var(--ink); }
+.legal .lbody ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.legal .lbody b { color: var(--ink); }
+.todo { color: var(--gold); font-family: var(--font-mono); font-size: .85em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .track, .ticker-track, .rec::before { animation: none; }
+  .card, .btn, .chip, .f-card { transition: none; }
+}
+
+/* --- Añadidos para la versión multipágina --- */
+a.f-card { text-decoration: none; color: inherit; }
+.rv-info h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.rv-info h1 .h1-sub { display: block; margin-top: 8px; font-size: .5em; font-style: italic; color: var(--gold); }
+.page { padding-block: 28px 72px; }
+.page .review { margin-top: 18px; }
+.crumbs { font: 500 .78rem/1.4 var(--font-mono); color: var(--muted); }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.crumbs li + li::before { content: "›"; margin-right: 6px; color: var(--moss); }
+.crumbs a { color: var(--muted); text-decoration: none; } .crumbs a:hover { color: var(--gold); }
+.faq { padding: clamp(22px, 4vw, 40px); border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.faq h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 6px; }
+.faq .q { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 18px 22px; display: grid; gap: 8px; }
+.faq .q h3 { font-size: 1.25rem; line-height: 1.25; }
+.faq .q p, .faq .q li { color: var(--muted); font-size: .95rem; }
+.faq .q ul { margin: 0; padding-left: 18px; }
+.more { padding: clamp(22px, 4vw, 40px); border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.more h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+.more ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.legal-page h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 18px 0 28px; }
+
+/* Imagen de la formación en la cabecera */
+.rv-head.has-media { grid-template-columns: 240px minmax(0, 1fr) 300px; }
+.rv-media { margin: 0; align-self: start; display: grid; gap: 8px; min-width: 0; }
+.rv-media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); display: block; box-shadow: 0 0 40px -20px var(--glow); }
+.rv-media figcaption { font: 500 .66rem/1.3 var(--font-mono); color: var(--muted); }
+.rv-media .ph { aspect-ratio: 1 / 1; border-radius: 16px; border: 1px dashed rgba(255,210,63,.5); display: grid; place-items: center; text-align: center; padding: 16px; color: var(--gold); font: 500 .75rem/1.5 var(--font-mono); background: var(--surface); }
+@media (max-width: 1060px) { .rv-head.has-media { grid-template-columns: 200px minmax(0, 1fr); } .rv-head.has-media .rv-score { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .rv-head.has-media { grid-template-columns: 1fr; } .rv-media { max-width: 280px; } }
+
+/* Imagen completa (sin recortar) con fondo difuminado de la propia imagen */
+.media-box { position: relative; overflow: hidden; background: #0A130D; }
+.media-box::before { content: ""; position: absolute; inset: -24px; background: var(--img) center / cover no-repeat; filter: blur(20px) brightness(.5) saturate(1.1); }
+.media-box img { position: relative; width: 100%; height: 100%; object-fit: contain; display: block; border: 0; border-radius: 0; box-shadow: none; aspect-ratio: auto; }
+.media-box.light { background: #F8F7F5; } .media-box.light::before { display: none; } .media-box.light img { padding: 16px; }
+.temario .tm { display: grid; gap: 8px; }
+.tm-sec { border: 1px solid var(--line); border-radius: 12px; background: var(--bg-2); }
+.tm-sec summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 30px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 11px 14px; font-weight: 600; font-size: .95rem; }
+.tm-sec summary::-webkit-details-marker { display: none; }
+.tm-sec summary small { font: 500 .7rem/1 var(--font-mono); color: var(--muted); }
+.tm-n { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 600 .8rem/1 var(--font-mono); color: var(--gold); border: 1px solid rgba(255,210,63,.45); }
+.tm-sec ol { margin: 0; padding: 0 14px 12px 58px; display: grid; gap: 4px; font-size: .9rem; color: var(--muted); }
+.temario .tm-sec ol li { display: list-item; }
+.tm-sec ol li::marker { color: var(--sage); font-family: var(--font-mono); font-size: .8rem; }
+</style>
+<style>.rv-media .media-box { aspect-ratio: 4 / 5; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 0 40px -20px var(--glow); }</style>
+<style>.risk{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;padding:14px 16px;border-radius:14px;background:rgba(240,138,110,.07);border:1px solid rgba(240,138,110,.35);font-size:.9rem;color:#D7E0CF}.risk b.ri{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(240,138,110,.18);color:var(--bad);font:700 1rem/1 var(--font-mono)}</style>
+<style>
+/* Desplegable «Ir a»: saltar a cualquier parte del análisis */
+.jump { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 74px); z-index: 8; width: fit-content; max-width: 100%; margin: 14px 0 0; }
+.jump summary { list-style: none; display: inline-flex; align-items: center; gap: 10px; max-width: 100%; padding: 10px 16px; border-radius: 999px; cursor: pointer; background: rgba(13,24,16,.92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid var(--gold); color: var(--ink); font: 600 .92rem/1.2 var(--font-body); box-shadow: 0 0 18px -6px var(--glow); }
+.jump summary::-webkit-details-marker { display: none; }
+.jump summary:hover { box-shadow: 0 0 24px -4px var(--glow); }
+.jump-k { font: 500 .68rem/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.jump-cur { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jump summary svg { flex: none; color: var(--gold); transition: transform .2s ease; }
+.jump[open] summary svg { transform: rotate(180deg); }
+.jump-list { position: absolute; top: calc(100% + 8px); left: 0; width: min(340px, calc(100vw - 32px)); max-height: min(62vh, 520px); overflow: auto; display: grid; gap: 2px; padding: 8px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,210,63,.12); }
+.jump-list a { display: grid; grid-template-columns: 26px minmax(0,1fr); gap: 8px; align-items: center; padding: 10px 12px; border-radius: 10px; color: var(--ink); text-decoration: none; font-size: .93rem; }
+.jump-list a span { font: 500 .7rem/1 var(--font-mono); color: var(--muted); }
+.jump-list a:hover, .jump-list a:focus-visible, .jump-list a[aria-current="true"] { background: rgba(255,210,63,.1); color: var(--gold); outline: none; }
+.jump-list a[aria-current="true"] span { color: var(--gold); }
+.page [id] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 140px); }
+@media (prefers-reduced-motion: reduce) { .jump summary svg { transition: none; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://compratuformacion.com/#organization",
+      "name": "Formalítica",
+      "url": "https://compratuformacion.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://compratuformacion.com/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "email": "hola@compratuformacion.com",
+      "founder": {
+        "@type": "Person",
+        "name": "J. Caballero"
+      },
+      "description": "Web independiente que analiza cursos, mentorías y herramientas online con una lista pública de 20 puntos y da una opinión personal."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://compratuformacion.com/#website",
+      "name": "Formalítica",
+      "url": "https://compratuformacion.com/",
+      "inLanguage": "es",
+      "description": "Opiniones y análisis de cursos y mentorías online revisados con 20 puntos.",
+      "publisher": {
+        "@id": "https://compratuformacion.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/#webpage",
+      "url": "https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/",
+      "name": "El Método Mikel Vázquez (trading Wyckoff y VSA): opiniones y análisis | Formalítica",
+      "description": "El Método Mikel Vázquez para ganar en el trading, analizado con 20 puntos: temario Wyckoff y VSA, autor, valoraciones, pros, contras y opinión personal.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://compratuformacion.com/#website"
+      },
+      "publisher": {
+        "@id": "https://compratuformacion.com/#organization"
+      },
+      "dateModified": "2026-11-23",
+      "breadcrumb": {
+        "@id": "https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://compratuformacion.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Formaciones analizadas",
+          "item": "https://compratuformacion.com/#formaciones"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "El Método Mikel Vázquez",
+          "item": "https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/#faq",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta El Método Mikel Vázquez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La ficha de la plataforma lo muestra a 108,90 €. En su canal de YouTube el autor anuncia un 50 % de descuento con el código MIKEL. Revisa el importe final en la página de pago antes de confirmar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién está detrás de El Método Mikel Vázquez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formación lleva el nombre de Mikel Vázquez, que figura como responsable en la plataforma de venta. Publica análisis diarios de Bitcoin en su canal de YouTube «Análisis Diario Bitcoin» (507 vídeos y 3.220 suscriptores desde julio de 2025). Sus resultados como trader no son verificables."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué enseña El Método Mikel Vázquez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lectura del mercado con la lógica de Wyckoff y el análisis de volumen VSA: diferencia entre trader minorista y profesional, soportes y resistencias como zonas, acumulación y distribución, manos fuertes, trampas y falsas rupturas, operativa en rangos, markup y markdown, invalidación de escenarios y construcción de un plan operativo. Usa Bitcoin y mercados volátiles como ejemplo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tiene garantía de devolución?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. La ficha de la plataforma indica 15 días; la página de ventas habla de 7 días sin preguntas. En ventas a Europa, las normas de la plataforma fijan un mínimo de 15 días."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sirve para principiantes en trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Según su propia descripción, está pensado para quien ya opera y no entiende por qué se mueve el mercado, o quiere dejar de depender de indicadores. Si nunca has abierto un gráfico, te costará más sacarle partido."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Garantiza ganar dinero con el trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Ningún curso puede garantizarlo. El trading con apalancamiento y criptomonedas conlleva un riesgo alto de pérdidas. La propia formación aclara que no es para quien busca señales rápidas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Merece la pena? ¿Qué nota tiene en Formalítica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El análisis sigue abierto: de los 20 puntos hemos verificado 7 (cumple 6 y falla 1). El temario apunta a un enfoque serio y el autor publica análisis a diario en YouTube, pero en la plataforma tiene una sola valoración, de 2 sobre 5."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Formalítica gana algo si compro El Método Mikel Vázquez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Formalítica es afiliada de esta formación. Si compras a través de nuestro enlace recibimos una comisión y tú pagas el mismo precio. La comisión no cambia la nota: todas las formaciones se revisan con los mismos 20 puntos."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script>document.addEventListener("error",e=>{if(e.target.tagName==="IMG")e.target.style.visibility="hidden"},true);</script>
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="../../" aria-label="Formalítica, inicio">
+      <svg viewBox="0 0 30 30" aria-hidden="true">
+        <rect x="2" y="17" width="7" height="11" rx="2" fill="#7E9A58"/>
+        <rect x="11.5" y="10" width="7" height="18" rx="2" fill="#BFD09C"/>
+        <rect x="21" y="2" width="7" height="26" rx="2" fill="#FFD23F"/>
+      </svg>
+      Formalítica
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../articulos/">Artículos</a></li>
+      <li><a href="../../#formaciones" data-goto="mentoria">Mentorías</a></li>
+      <li><a href="../../#formaciones">Formaciones analizadas</a></li>
+      <li><a href="../../#comparativas">Comparativas</a></li>
+    </ul>
+    <a class="btn btn-gold" href="../../#formaciones">Explorar</a>
+  </div>
+</nav>
+<main class="page">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta"><ol>
+      <li><a href="../../">Inicio</a></li>
+      <li><a href="../../#formaciones">Formaciones analizadas</a></li>
+      <li aria-current="page">El Método Mikel Vázquez</li>
+    </ol></nav>
+    <details class="jump" id="jump">
+      <summary aria-label="Ir a una sección del análisis"><span class="jump-k">Ir a</span><span class="jump-cur" id="jump-cur">Elige una sección</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <nav class="jump-list" aria-label="Secciones de este análisis"><a href="#resumen"><span>01</span>Resumen: para quién es</a><a href="#precio"><span>02</span>Qué incluye y precio</a><a href="#temario"><span>03</span>Temario completo</a><a href="#puntos"><span>04</span>Los 20 puntos analizados</a><a href="#experiencias"><span>05</span>Experiencias de usuarios</a><a href="#opinion"><span>06</span>Mi opinión</a><a href="#veredicto"><span>07</span>Veredicto: a favor y en contra</a><a href="#fuentes"><span>08</span>Fuentes consultadas</a><a href="#preguntas-frecuentes"><span>09</span>Preguntas frecuentes</a><a href="#otras"><span>10</span>Otras formaciones analizadas</a></nav>
+    </details>
+    <article class="review" id="analisis">
+
+    <div class="rv-head has-media">
+      <figure class="rv-media"><span class="media-box" style="--img:url(../../img/metodo-mikel-vazquez.webp)"><img src="../../img/metodo-mikel-vazquez.webp" alt="Mano con un bolígrafo señalando un soporte en un gráfico de velas con volumen"></span><figcaption>Imagen ilustrativa: leer el precio y el volumen</figcaption></figure>
+      <div class="rv-info">
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="type curso">Curso</span><span class="eyebrow">Trading · Wyckoff y VSA</span></div>
+        <h1>El Método Mikel Vázquez<span class="h1-sub">Opiniones y análisis en 20 puntos</span></h1>
+        <div class="facts">
+          <span>Imparte: <b>Mikel Vázquez</b></span>
+          <span>Precio: <b>108,90 €</b> · 50 % de descuento con el código MIKEL</span>
+          <span>Formato: <b>online · 6 secciones · 33 lecciones de unos 10 min</b></span>
+          <span>Revisado: <b>Noviembre 2026</b></span>
+        </div>
+        <span class="alert">✕ Falla en 1 punto clave</span>
+        <span style="font-size:.88rem;color:var(--muted)">Valoraciones suficientes o reseñas independientes</span>
+      </div>
+      <div class="rv-score">
+        <span class="eyebrow">Puntuación Formalítica</span>
+        <span class="score"><b>6</b><span>/7 verificados</span></span>
+        <div class="pips" aria-hidden="true"><i class="ok"></i><i class="ok"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="ok"></i><i class="ok"></i><i class="pend"></i><i class="pend"></i><i class="ok"></i><i class="ok"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="pend"></i><i class="bad"></i></div>
+        <span class="verdict v0" style="width:fit-content">Análisis en curso</span>
+        <div class="counts"><span style="color:var(--ok)">✓ 6 cumple</span><span style="color:var(--bad)">✕ 1 no cumple</span><span style="color:var(--gold)">◷ 13 pendientes</span></div>
+      </div>
+    </div>
+
+    <div class="promo" id="resumen">
+      <div class="summary">
+        <div class="p-card"><span class="p-label">En 10 segundos</span><p>Una formación de trading que enseña a leer el mercado como lo hacen las grandes manos, con la lógica de Wyckoff y el análisis de volumen VSA: acumulación, distribución, trampas y falsas rupturas, hasta montar tu propio plan operativo. Usa Bitcoin y mercados volátiles como terreno de práctica.</p></div>
+        <div class="p-card yes"><h4>Es para ti si…</h4><ul><li><span>Ya operas, pero no entiendes por qué el precio se mueve como se mueve</span></li><li><span>Sospechas que muchas rupturas son trampas y quieres detectarlas</span></li><li><span>Quieres dejar de depender de indicadores y leer precio y volumen</span></li></ul></div>
+        <div class="p-card no"><h4>No es para ti si…</h4><ul><li><span>Buscas señales rápidas o «copiar y pegar» operaciones</span></li><li><span>Nunca has abierto un gráfico: no es de nivel de iniciación</span></li><li><span>Esperas ganancias garantizadas: ningún curso de trading las da</span></li></ul></div>
+      </div>
+      <div class="cta-inline"><a class="btn btn-gold" href="https://go.hotmart.com/K108564138F" target="_blank" rel="sponsored noopener">Ver El Método Mikel Vázquez</a><small>Enlace de afiliado · mismo precio para ti</small></div>
+      <div class="offer" id="precio">
+        <div class="p-card inc"><h4>Qué enseña</h4><ul><li><span>Cómo se mueve el precio de Bitcoin y la diferencia entre el trader minorista y el profesional</span></li><li><span>Soportes y resistencias reales: zonas, no líneas</span></li><li><span>Acumulación y distribución con la lógica de Wyckoff</span></li><li><span>Lectura del volumen (VSA aplicado) y detección de manos fuertes</span></li><li><span>Trampas, falsas rupturas y operativa en rangos, markup y markdown</span></li><li><span>Invalidación de escenarios y construcción de un plan operativo</span></li><li><span>Enfoque: estructura + contexto + volumen + ejecución</span></li></ul></div>
+        <div class="p-card price-card"><span class="p-label">Precio y garantía</span><span class="price">108,90 €</span><p style="font-size:.9rem;color:var(--muted)">Precio que muestra la ficha de la plataforma. En su canal de YouTube el autor anuncia un <b style="color:var(--ink)">50 % de descuento con el código MIKEL</b>: introdúcelo en la página de pago y comprueba allí el importe final antes de confirmar.</p><div class="guarantee"><b>15d</b><span>15 días de garantía según la ficha de la plataforma (la página de ventas habla de 7). Te devuelven el dinero sin preguntas.</span></div></div>
+      </div>
+      <div class="p-card temario" id="temario"><div class="videos-head"><h4>Temario completo</h4><span class="vtag">6 secciones · 33 lecciones de unos 10 min · según la página de ventas</span></div><p style="font-size:.92rem;color:var(--muted)">Progresión: fundamentos → estructura → Wyckoff → volumen → contexto → estrategias.</p><div class="tm"><details class="tm-sec" open><summary><span class="tm-n">1</span><span>Fundamentos del mercado y mentalidad</span><small>5 lecciones</small></summary><ol><li value="1">Bienvenida y estructura del curso</li><li value="2">Cómo se mueve realmente el precio de Bitcoin</li><li value="3">Por qué los indicadores no funcionan sin contexto</li><li value="4">Quiénes son las manos fuertes y por qué controlan el mercado</li><li value="5">Mentalidad del trader profesional vs trader minorista</li></ol></details><details class="tm-sec"><summary><span class="tm-n">2</span><span>Soportes, resistencias y estructura</span><small>6 lecciones</small></summary><ol><li value="6">Qué es un soporte y una resistencia real</li><li value="7">Líneas vs zonas: cómo trazar niveles correctamente</li><li value="8">Soportes y resistencias en diferentes temporalidades</li><li value="9">Zonas institucionales y áreas de interés profesional</li><li value="10">Errores comunes al identificar niveles</li><li value="11">Ejemplos prácticos de soportes y resistencias</li></ol></details><details class="tm-sec"><summary><span class="tm-n">3</span><span>Wyckoff y fases del mercado</span><small>6 lecciones</small></summary><ol><li value="12">La lógica de Wyckoff explicada de forma simple</li><li value="13">Fases del mercado: acumulación, markup, distribución, markdown</li><li value="14">Eventos clave de Wyckoff que debes conocer</li><li value="15">Cómo identificar la fase actual</li><li value="16">Casos reales de Wyckoff en gráficos históricos</li><li value="17">Cómo cambia el escenario según la fase del mercado</li></ol></details><details class="tm-sec"><summary><span class="tm-n">4</span><span>Volumen y VSA (Volume Spread Analysis)</span><small>6 lecciones</small></summary><ol><li value="18">Qué información aporta realmente el volumen</li><li value="19">Volumen bajo y volumen alto: interpretación correcta</li><li value="20">Clímax de volumen y absorción institucional</li><li value="21">Volumen en rupturas de soporte y resistencia</li><li value="22">Señales de fortaleza y debilidad (VSA aplicado)</li><li value="23">Ejemplos prácticos de volumen en Bitcoin</li></ol></details><details class="tm-sec"><summary><span class="tm-n">5</span><span>Manos fuertes y contexto del mercado</span><small>5 lecciones</small></summary><ol><li value="24">Cómo confirmar si hay manos fuertes en el mercado</li><li value="25">Escenarios cuando las manos fuertes están acumulando</li><li value="26">Escenarios cuando las manos fuertes están distribuyendo</li><li value="27">Falsas rupturas y trampas al trader minorista</li><li value="28">Cómo invalidar escenarios y adaptarse al mercado</li></ol></details><details class="tm-sec"><summary><span class="tm-n">6</span><span>Estrategias operativas completas</span><small>5 lecciones</small></summary><ol><li value="29">Estrategia con manos fuertes presentes (mercado fuerte)</li><li value="30">Estrategias en rangos y rupturas confirmadas</li><li value="31">Estrategia sin manos fuertes: mercado débil o lateral</li><li value="32">Estrategias cuando hay manos fuertes y hay un markup</li><li value="33">Estrategias cuando existen manos fuertes y hay un markdown</li></ol></details></div></div>
+      <div class="risk"><b class="ri">!</b><span><b style="color:var(--ink)">Aviso de riesgo.</b> El trading, y más con criptomonedas y apalancamiento, conlleva un riesgo alto de perder dinero. Esta ficha analiza una formación, no es asesoramiento financiero. Practica en demo y no arriesgues dinero que no puedas permitirte perder.</span></div>
+    </div>
+    <div class="checks" id="puntos">
+      <span class="p-label" style="display:block;margin:0 0 6px 16px">El análisis completo: 20 puntos</span>
+      <div class="ck-head"><span>Punto analizado</span><span>Resultado</span><span>Comentario</span></div>
+      <div class="ck-block"><h4>Antes de comprar<span>2/2 verificados</span></h4><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Temario completo visible antes de pagar</span>
+        <span class="res ok"><i class="mark ok" aria-hidden="true">✓</i>Cumple</span>
+        <span class="nt">La página de ventas muestra el temario completo: 6 secciones y 33 lecciones con su título. Lo tienes más arriba.</span>
+      </div><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Instructor identificado y con trayectoria comprobable</span>
+        <span class="res ok"><i class="mark ok" aria-hidden="true">✓</i>Cumple</span>
+        <span class="nt">Mikel Vázquez publica a diario análisis de Bitcoin en su canal de YouTube, <a href="https://www.youtube.com/@analisisdiariobitcoin" target="_blank" rel="noopener nofollow">Análisis Diario Bitcoin</a>: 507 vídeos y 3.220 suscriptores desde julio de 2025, con lectura de precio y volumen. Su perfil en la plataforma está verificado. Es una trayectoria corta y pública; sus resultados como trader no son verificables.</span>
+      </div><div class="ck-row">
+        <span class="pt">Precio final claro, sin costes ocultos</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">La ficha de la plataforma muestra 108,90 €. Falta comprobar en la página de pago que no haya costes añadidos.</span>
+      </div><div class="ck-row">
+        <span class="pt">Sin urgencia falsa (cuentas atrás, «solo por hoy», plazas «limitadas»)</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">No aparece en la ficha pública. Pendiente de revisar la página de ventas y la de pago.</span>
+      </div><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> No promete ingresos ni resultados garantizados</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">La descripción dice que «no aprenderás a adivinar» y que no es para quien busca señales rápidas, pero el título habla de un método «para ganar en el trading». Pendiente de ver cómo lo plantea la página de ventas.</span>
+      </div></div><div class="ck-block"><h4>Condiciones de compra<span>2/2 verificados</span></h4><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Garantía de devolución con plazo claro</span>
+        <span class="res ok"><i class="mark ok" aria-hidden="true">✓</i>Cumple</span>
+        <span class="nt">15 días según la ficha de la plataforma; la página de ventas habla de una garantía incondicional de 7. En ventas a Europa, las normas de la plataforma fijan un mínimo de 15.</span>
+      </div><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Reembolso sin condiciones abusivas (como límites de «% visto»)</span>
+        <span class="res ok"><i class="mark ok" aria-hidden="true">✓</i>Cumple</span>
+        <span class="nt">La página de ventas promete devolver el dinero «sin preguntas» dentro del plazo de garantía.</span>
+      </div><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Sin suscripciones ni renovaciones ocultas</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">La plataforma lo cataloga como «servicio en línea». Pendiente de ver en la página de pago si es un pago único o una suscripción.</span>
+      </div><div class="ck-row">
+        <span class="pt">Acceso inmediato tras el pago</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar.</span>
+      </div></div><div class="ck-block"><h4>Contenido anunciado<span>2/2 verificados</span></h4><div class="ck-row">
+        <span class="pt">Indica cuántas clases u horas incluye</span>
+        <span class="res ok"><i class="mark ok" aria-hidden="true">✓</i>Cumple</span>
+        <span class="nt">33 lecciones de unos 10 minutos cada una, en 6 secciones: alrededor de 5 horas y media en total.</span>
+      </div><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Incluye práctica: ejercicios, proyectos o un resultado final</span>
+        <span class="res ok"><i class="mark ok" aria-hidden="true">✓</i>Cumple</span>
+        <span class="nt">Su objetivo final es que construyas tu propio plan operativo, con invalidación de escenarios incluida.</span>
+      </div><div class="ck-row">
+        <span class="pt">Material descargable (plantillas, guías, e-books)</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar.</span>
+      </div><div class="ck-row">
+        <span class="pt">Clase gratuita, vídeo de muestra o vista previa</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">No aparece en la ficha pública.</span>
+      </div></div><div class="ck-block"><h4>Soporte anunciado<span>0/0 verificados</span></h4><div class="ck-row">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Ofrece soporte o acompañamiento para resolver dudas</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar.</span>
+      </div><div class="ck-row">
+        <span class="pt">Contacto con una persona real (el autor o su equipo)</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar.</span>
+      </div><div class="ck-row">
+        <span class="pt">Comunidad o sesiones en vivo</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar si el curso incluye comunidad. El autor anuncia aparte un canal VIP de Telegram con operativa diaria, de pago y no incluido en el curso.</span>
+      </div></div><div class="ck-block"><h4>Después y reputación<span>0/1 verificados</span></h4><div class="ck-row">
+        <span class="pt">Acceso de por vida o plazo claro</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar.</span>
+      </div><div class="ck-row">
+        <span class="pt">Certificado al terminar</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">Pendiente de verificar.</span>
+      </div><div class="ck-row">
+        <span class="pt">Testimonios con nombre y cara</span>
+        <span class="res pend"><i class="mark pend" aria-hidden="true">◷</i>Pendiente</span>
+        <span class="nt">La ficha de la plataforma no muestra testimonios. Pendiente de revisar la página de ventas.</span>
+      </div><div class="ck-row fail-key">
+        <span class="pt"><b class="key" title="Punto clave">★</b> Valoraciones suficientes o reseñas independientes</span>
+        <span class="res bad"><i class="mark bad" aria-hidden="true">✕</i>No cumple</span>
+        <span class="nt">En la plataforma tiene una sola valoración, de 2 sobre 5, y no hemos encontrado reseñas independientes.</span>
+      </div></div>
+    </div>
+
+    <div class="rv-body">
+      <div id="experiencias">
+        <h4>Experiencias de usuarios</h4>
+        <div class="empty"><span><b style="color:var(--ink)">¿Hiciste El Método Mikel Vázquez?</b> Cuéntanos tu experiencia, buena o mala. Todavía no hemos publicado ninguna: solo publicamos las de personas que comprobamos que hicieron la formación.</span><a class="btn btn-line" href="../../?motivo=experiencia#contacto" style="padding:11px 18px;font-size:.9rem">Contar mi experiencia</a></div>
+      </div>
+      <div id="opinion">
+        <h4>Mi opinión</h4>
+        <div class="opinion">
+          <span class="av" aria-hidden="true">JC</span>
+          <div class="txt">
+            <span class="by">J. Caballero · Fundador de Formalítica · Opinión personal · Basada en la información pública y en mi experiencia como inversor, sin haber cursado la formación.</span><p>No he hecho este curso, y lo digo antes de nada. Mi opinión sale de revisar todo lo que publica el autor (el temario completo, la garantía, su ficha en la plataforma y su canal de YouTube) y de mi experiencia: llevo años invirtiendo y especulando a corto y medio plazo.</p><p>De todas las formas de leer el mercado que he probado, la única que me encajó es justo la que enseña este curso: el análisis de volumen VSA junto a las estructuras de acumulación y distribución de Wyckoff y sus eventos. Ordenan el gráfico y te ayudan a ver quién tiene el control, para decidir si entrar o quedarte fuera. El temario sigue un orden lógico: fundamentos, estructura, Wyckoff, volumen, contexto y, al final, estrategias concretas para cada fase del mercado.</p><p>El precio me parece justo. Los cuatro libros que necesitarías para empezar en esto ya cuestan algo parecido, y yo gasté bastante más aprendiéndolo por mi cuenta. Aquí tienes en 33 lecciones lo que a mí me costó años reunir.</p><p>Las pegas, claras. En la plataforma solo tiene una valoración, de 2 sobre 5, y su canal de YouTube es reciente. Y que nadie se engañe: con el trading se puede ganar dinero, pero es más fácil perderlo. Un curso te da un método. Después toca practicarlo y pulirlo, y eso pide tiempo, paciencia, conocimiento y capital.</p><p>En resumen: Wyckoff y VSA son métodos con décadas de uso entre inversores de todo el mundo, y este curso los presenta de forma ordenada. Los resultados dependerán de tu práctica. Mi consejo: aprovecha la garantía para ver las primeras clases con calma y practica en una cuenta demo antes de arriesgar dinero que no puedas permitirte perder.</p>
+          </div>
+        </div>
+      </div>
+      <div class="final" id="veredicto">
+        <div class="final-top">
+          <div><span class="p-label">Veredicto provisional</span><h4>Análisis en curso</h4></div>
+          <span class="score"><b>6</b><span>/7 verificados</span></span>
+        </div>
+        <div class="pc2">
+          <div class="p-card yes"><h4>A favor</h4><ul><li><span>Temario serio: Wyckoff y VSA, no señales ni indicadores mágicos</span></li><li><span>Va a la raíz: entender por qué se mueve el precio</span></li><li><span>Termina en un plan operativo propio, con invalidación de escenarios</span></li><li><span>No vende atajos: avisa de que no es para quien busca señales rápidas</span></li><li><span>Autor activo: análisis diarios en YouTube y 50 % de descuento con el código MIKEL</span></li></ul></div>
+          <div class="p-card no"><h4>En contra</h4><ul><li><span>Canal reciente (desde julio de 2025) y sin resultados verificables como trader</span></li><li><span>Garantía con dos plazos distintos: 15 días en la plataforma, 7 en la página de ventas</span></li><li><span>Una sola valoración en la plataforma, de 2 sobre 5</span></li><li><span>El título promete «ganar en el trading», algo que nadie puede garantizar</span></li></ul></div>
+        </div>
+        <p class="rec-text">Un temario con buen enfoque para traders que ya operan y quieren leer el mercado con Wyckoff y VSA, con un autor activo en YouTube y un 50 % de descuento con el código MIKEL. Aún hay demasiadas incógnitas para darle una nota cerrada: 13 de los 20 puntos están pendientes y en la plataforma solo tiene una valoración, de 2 sobre 5. Si te interesa, revisa bien la página de ventas y apóyate en la garantía.</p>
+      </div>
+      <div class="sources" id="fuentes">
+        <h4>Fuentes consultadas</h4>
+        <p class="src-note">Revisadas en Noviembre 2026. Las webs de afiliados no cuentan como reseñas independientes.</p>
+        <ol><li><a href="https://go.hotmart.com/K108564138F?dp=1" target="_blank" rel="sponsored noopener">Ficha del producto en la plataforma ↗</a> <small style="color:var(--muted)">(enlace de afiliado)</small><span class="stype">Plataforma de venta</span></li><li><a href="https://go.hotmart.com/K108564138F" target="_blank" rel="sponsored noopener">Página de ventas de la formación ↗</a> <small style="color:var(--muted)">(enlace de afiliado)</small><span class="stype">Página de ventas</span></li><li><a href="https://www.youtube.com/@analisisdiariobitcoin" target="_blank" rel="noopener nofollow">Canal de YouTube «Análisis Diario Bitcoin» del autor ↗</a><span class="stype">Oficial</span></li><li><span>Búsqueda de reseñas independientes sobre la formación: sin resultados</span><span class="stype">Búsqueda propia</span></li><li><a href="https://help.hotmart.com/es/article/360034552751/-como-ajustar-el-plazo-de-garantia-del-producto-que-he-creado-" target="_blank" rel="noopener nofollow">Plazos de garantía de la plataforma ↗</a><span class="stype">Normas oficiales</span></li></ol>
+      </div>
+      <div class="aff-box">
+        <p><b>Formalítica es afiliada de esta formación.</b> <b>Transparencia:</b> si compras a través de nuestro enlace, Formalítica recibe una pequeña comisión y <b>tú pagas exactamente el mismo precio</b>. La comisión no influye en la puntuación: revisamos todas las formaciones con los mismos 20 puntos.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="https://go.hotmart.com/K108564138F" target="_blank" rel="sponsored noopener">Ver El Método Mikel Vázquez</a>
+          <small>Enlace de afiliado</small>
+        </div>
+      </div>
+    </div>
+      <section class="faq" id="preguntas-frecuentes" aria-labelledby="faq-title">
+        <h2 id="faq-title">Preguntas frecuentes sobre El Método Mikel Vázquez</h2>
+        <div class="q"><h3>¿Cuánto cuesta El Método Mikel Vázquez?</h3><p>La ficha de la plataforma lo muestra a 108,90 €. En su canal de YouTube el autor anuncia un 50 % de descuento con el código MIKEL. Revisa el importe final en la página de pago antes de confirmar.</p></div><div class="q"><h3>¿Quién está detrás de El Método Mikel Vázquez?</h3><p>La formación lleva el nombre de Mikel Vázquez, que figura como responsable en la plataforma de venta. Publica análisis diarios de Bitcoin en su canal de YouTube «Análisis Diario Bitcoin» (507 vídeos y 3.220 suscriptores desde julio de 2025). Sus resultados como trader no son verificables.</p></div><div class="q"><h3>¿Qué enseña El Método Mikel Vázquez?</h3><p>Lectura del mercado con la lógica de Wyckoff y el análisis de volumen VSA: diferencia entre trader minorista y profesional, soportes y resistencias como zonas, acumulación y distribución, manos fuertes, trampas y falsas rupturas, operativa en rangos, markup y markdown, invalidación de escenarios y construcción de un plan operativo. Usa Bitcoin y mercados volátiles como ejemplo.</p></div><div class="q"><h3>¿Tiene garantía de devolución?</h3><p>Sí. La ficha de la plataforma indica 15 días; la página de ventas habla de 7 días sin preguntas. En ventas a Europa, las normas de la plataforma fijan un mínimo de 15 días.</p></div><div class="q"><h3>¿Sirve para principiantes en trading?</h3><p>Según su propia descripción, está pensado para quien ya opera y no entiende por qué se mueve el mercado, o quiere dejar de depender de indicadores. Si nunca has abierto un gráfico, te costará más sacarle partido.</p></div><div class="q"><h3>¿Garantiza ganar dinero con el trading?</h3><p>No. Ningún curso puede garantizarlo. El trading con apalancamiento y criptomonedas conlleva un riesgo alto de pérdidas. La propia formación aclara que no es para quien busca señales rápidas.</p></div><div class="q"><h3>¿Merece la pena? ¿Qué nota tiene en Formalítica?</h3><p>El análisis sigue abierto: de los 20 puntos hemos verificado 7 (cumple 6 y falla 1). El temario apunta a un enfoque serio y el autor publica análisis a diario en YouTube, pero en la plataforma tiene una sola valoración, de 2 sobre 5.</p></div><div class="q"><h3>¿Formalítica gana algo si compro El Método Mikel Vázquez?</h3><p>Formalítica es afiliada de esta formación. Si compras a través de nuestro enlace recibimos una comisión y tú pagas el mismo precio. La comisión no cambia la nota: todas las formaciones se revisan con los mismos 20 puntos.</p></div>
+      </section>
+      <section class="more" id="otras" aria-labelledby="more-title">
+        <h2 id="more-title">Otras formaciones analizadas</h2>
+        <ul><li><a href="../../formaciones/master-en-cursos-online-opiniones/">Máster en Cursos Online</a> · 16/20 puntos · Recomendable con reservas</li><li><a href="../../formaciones/insta-leads-opiniones/">Insta Leads</a> · 14/20 puntos · Recomendable con reservas</li><li><a href="../../formaciones/cake-designer-opiniones/">Cake Designer</a> · 15/19 puntos · Recomendable con reservas</li></ul>
+      </section>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Formalítica · J. Caballero · <a href="mailto:hola@compratuformacion.com" style="color:inherit">hola@compratuformacion.com</a></span>
+    <nav class="legal-links" aria-label="Legal"><a href="../../legal/#aviso-legal">Aviso legal</a><a href="../../legal/#privacidad">Privacidad</a><a href="../../legal/#afiliados">Afiliados</a><a href="../../legal/#resenas">Reseñas</a><a href="../../legal/#descargo">Descargo</a></nav>
+    <span>Imágenes ilustrativas.</span>
+    <p class="disclosure">Algunas formaciones pueden llevar un enlace de afiliado. Si compras a través de él, Formalítica recibe una comisión y tú pagas exactamente el mismo precio. Las comisiones no influyen en la puntuación: todas las formaciones se revisan con los mismos 20 puntos.</p>
+  </div>
+</footer>
+<script>
+/* Desplegable «Ir a»: cierra al elegir y marca la sección que estás leyendo */
+(function () {
+  const jump = document.getElementById("jump");
+  if (!jump) return;
+  const cur = document.getElementById("jump-cur");
+  const links = [...jump.querySelectorAll(".jump-list a")];
+  const targets = links.map(a => document.getElementById(a.hash.slice(1))).filter(Boolean);
+  links.forEach(a => a.addEventListener("click", () => { jump.open = false; }));
+  document.addEventListener("click", e => { if (jump.open && !jump.contains(e.target)) jump.open = false; });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && jump.open) { jump.open = false; jump.querySelector("summary").focus(); } });
+  function mark() {
+    const line = 170;
+    let active = null;
+    targets.forEach(t => { if (t.getBoundingClientRect().top <= line) active = t; });
+    links.forEach(a => {
+      const on = !!active && a.hash === "#" + active.id;
+      a.setAttribute("aria-current", on ? "true" : "false");
+      if (on) cur.textContent = a.dataset.short || a.textContent.replace(/^\s*\d+\s*/, "");
+    });
+    if (!active) cur.textContent = "Elige una sección";
+  }
+  let raf = 0;
+  addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(mark); }, { passive: true });
+  mark();
+})();
+</script>
+</body>
+</html>

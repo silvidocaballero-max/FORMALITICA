@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Calculadora de tamaño de posición gratis (Forex y Futuros) | Formalítica</title>
+<meta name="description" content="TradeSize Pro: calcula gratis cuántos lotes o contratos abrir según tu capital, tu riesgo y tu Stop Loss. Forex y futuros CME, con comisiones, spread y objetivos 1:1 y 1:2.">
+<link rel="canonical" href="https://compratuformacion.com/herramientas/tradesize-pro/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Formalítica">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de tamaño de posición gratis (Forex y Futuros) | Formalítica">
+<meta property="og:description" content="Calcula cuántos lotes o contratos abrir sin pasarte de tu riesgo. Forex y futuros CME.">
+<meta property="og:url" content="https://compratuformacion.com/herramientas/tradesize-pro/">
+<meta property="og:image" content="https://compratuformacion.com/og/portada.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* =========================================================
+   FORMALÍTICA · Pantalla de inicio (v3)
+   Concepto: un "catálogo vivo". Columnas de cursos y mentorías
+   que se deslizan sin parar, mezclando fotos y fichas, sobre
+   musgo oscuro con llamadas a la acción en dorado neón.
+   ========================================================= */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  color-scheme: dark;
+  --bg: #0D1810;
+  --bg-2: #122016;
+  --surface: #182A1D;
+  --surface-2: #1F3525;
+  --line: #2C4733;
+  --ink: #EDF2E6;
+  --muted: #A6B79F;
+  --moss: #7E9A58;
+  --sage: #BFD09C;
+  --gold: #FFD23F;
+  --gold-hi: #FFE88A;
+  --glow: rgba(255, 210, 63, .55);
+
+  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --max: 1240px;
+}
+
+/* ---------- 2. Base ---------- */
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 1rem/1.7 var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.04; margin: 0; text-wrap: balance; }
+em { font-style: italic; color: var(--gold); }
+p { margin: 0; }
+a { color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.wrap {
+  max-width: var(--max); margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow { font: 500 .76rem/1.3 var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--sage); }
+
+/* Botones dorado neón */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 26px; border-radius: 999px; border: 0;
+  font: 700 1rem/1 var(--font-body); text-decoration: none; cursor: pointer;
+  transition: transform .2s ease, box-shadow .25s ease, background .2s ease;
+}
+.btn-gold { background: var(--gold); color: #1B1600; box-shadow: inset 0 0 0 1px var(--gold-hi), 0 0 16px var(--glow), 0 0 44px rgba(255,210,63,.22); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--gold-hi), 0 0 24px var(--glow), 0 0 72px rgba(255,210,63,.4); }
+.btn-line { background: transparent; color: var(--gold); box-shadow: inset 0 0 0 1.5px var(--gold); }
+.btn-line:hover { background: rgba(255,210,63,.1); box-shadow: inset 0 0 0 1.5px var(--gold), 0 0 22px rgba(255,210,63,.25); }
+
+/* ---------- 3. Navegación ---------- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: rgba(13,24,16,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.logo { display: flex; align-items: center; gap: 10px; font: 700 1.45rem/1 var(--font-display); color: var(--ink); text-decoration: none; }
+.logo svg { width: 28px; height: 28px; flex: none; }
+.nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .93rem; }
+.nav-links a:hover { color: var(--gold); }
+.nav .btn { padding: 11px 18px; font-size: .9rem; }
+@media (max-width: 900px) { .nav-links { display: none; } }
+
+/* ---------- 4. Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  padding-block: clamp(36px, 5vw, 64px);
+  background:
+    radial-gradient(800px 480px at 90% 0%, rgba(126,154,88,.26), transparent 70%),
+    radial-gradient(520px 320px at 0% 100%, rgba(255,210,63,.07), transparent 70%),
+    var(--bg);
+}
+.hero .wrap { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(32px, 5vw, 60px); align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); letter-spacing: -.01em; }
+.hero h1 em { text-shadow: 0 0 28px rgba(255,210,63,.35); }
+.lead { font-size: clamp(1.05rem, 1.5vw, 1.15rem); color: var(--muted); max-width: 36em; }
+.lead b { color: var(--ink); font-weight: 600; }
+
+/* Selector de temas: ilumina las fichas que coinciden */
+.pick { display: grid; gap: 12px; }
+.pick-label { font-weight: 600; font-size: .95rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: 600 .88rem/1 var(--font-body); color: var(--ink);
+  background: rgba(237,242,230,.05); border: 1px solid var(--line);
+  padding: 10px 14px; border-radius: 99px; cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.chip:hover, .chip[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); background: rgba(255,210,63,.08); box-shadow: 0 0 14px rgba(255,210,63,.25); }
+.chip.mentor { border-style: dashed; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.trust { display: flex; flex-wrap: wrap; gap: 10px 22px; font: 500 .8rem/1.4 var(--font-mono); color: var(--muted); }
+.trust span { display: inline-flex; gap: 8px; align-items: center; }
+.trust span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--glow); }
+
+/* ---------- Catálogo vivo: columnas que se deslizan ---------- */
+.wall {
+  position: relative; height: 620px; min-width: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+.col { min-width: 0; }
+.track { display: grid; gap: 12px; animation: up 46s linear infinite; }
+.col:nth-child(2) .track { animation-duration: 54s; animation-direction: reverse; }
+.col:nth-child(3) .track { animation-duration: 40s; }
+.wall:hover .track, .wall.focus .track { animation-play-state: paused; }
+@keyframes up { to { transform: translateY(calc(-50% - 6px)); } }
+
+.card {
+  position: relative; overflow: hidden; border-radius: 16px; margin: 0;
+  border: 1px solid var(--line); background: var(--surface);
+  transition: border-color .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+/* Ficha con foto */
+.card.photo { height: 230px; }
+.card.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,14,10,.3) 0%, transparent 30%, transparent 50%, rgba(8,14,10,.88) 100%); pointer-events: none; }
+.card.photo figcaption { position: absolute; left: 12px; right: 12px; bottom: 10px; z-index: 2; display: grid; gap: 2px; }
+.card.photo figcaption b { font: 500 1.2rem/1.1 var(--font-display); color: #fff; }
+.card.photo figcaption span { font: 500 .7rem/1.3 var(--font-mono); color: #DDE5D5; }
+.rec { position: absolute; top: 10px; left: 12px; z-index: 2; display: inline-flex; gap: 6px; align-items: center; font: 500 .66rem/1 var(--font-mono); letter-spacing: .08em; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.7); }
+.rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF4D3D; box-shadow: 0 0 8px #FF4D3D; animation: blink 1.2s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+/* Ficha tipográfica */
+.card.info { padding: 16px; display: grid; gap: 10px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); }
+.card.info .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.ic { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; background: rgba(191,208,156,.1); color: var(--sage); flex: none; }
+.ic svg { width: 21px; height: 21px; }
+.type { font: 600 .68rem/1 var(--font-body); letter-spacing: .04em; padding: 6px 9px; border-radius: 99px; white-space: nowrap; }
+.type.curso { background: rgba(191,208,156,.12); color: var(--sage); }
+.type.mentoria { color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+.type.herramienta { background: rgba(155,212,122,.12); color: var(--ok); }
+.card.info .cat { font: 500 .66rem/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.card.info h3 { font-size: 1.22rem; line-height: 1.12; }
+.card.info .meta { font: 500 .72rem/1.3 var(--font-mono); color: var(--muted); }
+.card.info.feature { border-color: rgba(255,210,63,.5); }
+a.card.real { color: inherit; text-decoration: none; cursor: pointer; border-color: var(--gold); box-shadow: 0 0 0 1px rgba(255,210,63,.35), 0 0 26px -8px var(--glow); }
+a.card.real:hover, a.card.real:focus-visible { box-shadow: 0 0 0 1px var(--gold), 0 0 30px -4px var(--glow); outline: none; }
+a.card.real .go-real { font: 600 .74rem/1 var(--font-body); color: var(--gold); }
+.seal { display: inline-flex; gap: 6px; align-items: center; width: fit-content; font: 600 .7rem/1 var(--font-body); color: var(--gold); }
+.seal::before { content: "★"; text-shadow: 0 0 8px var(--glow); }
+
+/* Al elegir un tema, se iluminan sus fichas */
+.wall.focus .card { filter: saturate(.35) brightness(.5); }
+.wall.focus .card.on { filter: none; border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 0 30px -6px var(--glow); }
+.wall-note { margin-top: 10px; font: 500 .72rem/1.4 var(--font-mono); color: var(--muted); text-align: right; }
+
+@media (max-width: 980px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .wall { height: 520px; }
+}
+@media (max-width: 560px) {
+  .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); height: 480px; }
+  .col:nth-child(3) { display: none; }
+  .card.photo { height: 190px; }
+  .card.info h3 { font-size: 1.08rem; }
+}
+
+/* ---------- 5. Cinta de temas ---------- */
+.ticker { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding-block: 18px; }
+.ticker-track { display: flex; width: max-content; animation: slide 50s linear infinite; }
+.ticker-track span { display: inline-flex; align-items: center; gap: 36px; padding-right: 36px; font: italic 500 1.45rem/1 var(--font-display); color: var(--sage); white-space: nowrap; }
+.ticker-track span::after { content: "✦"; font-style: normal; font-size: .85rem; color: var(--gold); text-shadow: 0 0 8px var(--glow); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+footer { padding-block: 40px; color: var(--muted); font-size: .85rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* =========================================================
+   FORMACIONES: fichas con checklist ✓ / ✗
+   ========================================================= */
+:root { --ok: #9BD47A; --bad: #F08A6E; --surface-3: #243C2B; }
+section { padding-block: clamp(72px, 9vw, 120px); }
+.section-head { display: grid; gap: 16px; max-width: 720px; margin-bottom: 40px; }
+.section-head h2 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+.section-head p { color: var(--muted); font-size: 1.06rem; }
+.sample-note { display: inline-flex; width: fit-content; font: 500 .76rem/1.4 var(--font-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: 99px; padding: 7px 14px; }
+
+/* Leyenda */
+.legend { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 28px; font-size: .9rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.mark { width: 26px; height: 26px; border-radius: 50%; display: inline-grid; place-items: center; font: 700 .85rem/1 var(--font-body); flex: none; }
+.mark.ok { background: rgba(155,212,122,.15); color: var(--ok); box-shadow: inset 0 0 0 1px rgba(155,212,122,.5); }
+.mark.bad { background: rgba(240,138,110,.15); color: var(--bad); box-shadow: inset 0 0 0 1px rgba(240,138,110,.5); }
+.mark.na { background: rgba(237,242,230,.06); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
+.mark.pend { background: rgba(255,210,63,.08); color: var(--gold); box-shadow: inset 0 0 0 1px rgba(255,210,63,.45); }
+.ck-row .res.pend { color: var(--gold); }
+.pips i.pend { background: rgba(255,210,63,.35); }
+.verdict.v0 { background: transparent; color: var(--gold); box-shadow: inset 0 0 0 1px rgba(255,210,63,.5); }
+.ej { font: 600 .66rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--line); border-radius: 99px; padding: 5px 8px; }
+.opinion .pending { color: var(--muted); font-style: italic; }
+.key { color: var(--gold); text-shadow: 0 0 8px var(--glow); }
+
+/* Filtro y tarjetas resumen */
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.f-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.f-card {
+  text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 22px; display: grid; gap: 14px; align-content: start;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.f-card:hover { transform: translateY(-3px); border-color: var(--moss); }
+.f-card[aria-pressed="true"] { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 0 34px -10px var(--glow); }
+.f-card .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.f-card .cat { font: 500 .68rem/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.f-card h3 { font-size: 1.45rem; }
+.f-card .meta { font-size: .88rem; color: var(--muted); }
+.score-line { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.score { font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+.score b { font-size: 2.6rem; font-weight: 500; color: var(--gold); text-shadow: 0 0 16px var(--glow); }
+.score span { font-size: 1.1rem; color: var(--muted); }
+.verdict { font: 600 .78rem/1 var(--font-body); padding: 7px 11px; border-radius: 99px; background: rgba(237,242,230,.08); white-space: nowrap; }
+.verdict.v1 { background: var(--gold); color: #1B1600; box-shadow: 0 0 12px var(--glow); }
+.verdict.v2 { background: rgba(155,212,122,.16); color: var(--ok); }
+.verdict.v3 { background: rgba(255,210,63,.12); color: var(--gold); }
+.verdict.v4 { background: rgba(240,138,110,.16); color: var(--bad); }
+/* Píxeles: un cuadradito por punto analizado */
+.pips { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; }
+.pips i { height: 8px; border-radius: 2px; background: rgba(237,242,230,.08); }
+.pips i.ok { background: var(--ok); }
+.pips i.bad { background: var(--bad); }
+.pips i.na { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+.alert { font-size: .82rem; color: var(--bad); display: flex; gap: 6px; align-items: center; }
+.alert.none { color: var(--ok); }
+.f-card .go { font-weight: 700; font-size: .9rem; color: var(--gold); }
+@media (max-width: 920px) { .f-grid { grid-template-columns: 1fr; } }
+
+/* Ficha completa */
+.review { margin-top: 44px; border: 1px solid var(--line); border-radius: 24px; background: var(--bg-2); overflow: hidden; scroll-margin-top: 90px; }
+.rv-head { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; padding: clamp(22px, 4vw, 40px); border-bottom: 1px solid var(--line); background: radial-gradient(600px 260px at 100% 0%, rgba(255,210,63,.08), transparent 70%); }
+.rv-info { display: grid; gap: 14px; min-width: 0; align-content: start; }
+.rv-info h3 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 500 .8rem/1.4 var(--font-mono); color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 500; }
+.rv-score { display: grid; gap: 12px; align-content: start; padding: 22px; border-radius: 18px; border: 1px solid var(--gold); background: var(--surface); box-shadow: 0 0 40px -18px var(--glow); }
+.rv-score .score b { font-size: 3.6rem; }
+.rv-score small { color: var(--muted); font-size: .85rem; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .85rem; color: var(--muted); }
+@media (max-width: 860px) { .rv-head { grid-template-columns: 1fr; } }
+
+/* Tabla de checks */
+.checks { padding: clamp(14px, 3vw, 32px); }
+.ck-head, .ck-row { display: grid; grid-template-columns: minmax(0, 1.2fr) 118px minmax(0, 1.4fr); gap: 16px; align-items: center; }
+.ck-head { padding: 0 16px 10px; font: 500 .7rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.ck-block { margin-top: 18px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
+.ck-block h4 { margin: 0; padding: 12px 16px; font: 600 .82rem/1.2 var(--font-body); letter-spacing: .04em; color: var(--sage); background: var(--surface-3); display: flex; justify-content: space-between; gap: 10px; }
+.ck-block h4 span { font-family: var(--font-mono); font-weight: 500; color: var(--muted); }
+.ck-row { padding: 13px 16px; border-top: 1px solid var(--line); }
+.ck-row .pt { font-weight: 500; font-size: .95rem; }
+.ck-row .res { display: flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 600; white-space: nowrap; }
+.ck-row .res.ok { color: var(--ok); } .ck-row .res.bad { color: var(--bad); } .ck-row .res.na { color: var(--muted); }
+.ck-row .nt { font-size: .88rem; color: var(--muted); }
+.ck-row.fail-key { background: rgba(240,138,110,.06); }
+@media (max-width: 640px) {
+  .ck-head { display: none; }
+  .ck-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .ck-row .nt { grid-column: 1 / -1; }
+  .ck-row .nt:empty { display: none; }
+}
+
+/* Experiencias y opinión */
+.rv-body { display: grid; gap: 28px; padding: 0 clamp(14px, 3vw, 32px) clamp(22px, 4vw, 40px); }
+.rv-body h4 { font: 500 1.9rem/1.1 var(--font-display); margin: 0 0 16px; }
+.exp-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.exp { margin: 0; padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 12px; }
+.exp blockquote { margin: 0; font: italic 500 1.08rem/1.5 var(--font-display); }
+.exp figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .85rem; color: var(--muted); }
+.exp figcaption b { color: var(--ink); }
+.verified { color: var(--ok); font-weight: 600; }
+.empty { padding: 22px; border-radius: 16px; border: 1px dashed var(--line); color: var(--muted); display: grid; gap: 12px; justify-items: start; }
+@media (max-width: 760px) { .exp-list { grid-template-columns: 1fr; } }
+.opinion { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 20px; padding: 26px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.opinion .av { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font: 600 1.3rem/1 var(--font-display); color: var(--gold); background: rgba(255,210,63,.1); border: 1px solid rgba(255,210,63,.45); }
+.opinion .txt { display: grid; gap: 14px; max-width: 68ch; }
+.opinion .by { font: 500 .78rem/1.4 var(--font-mono); color: var(--muted); }
+.opinion p { color: #D7E0CF; }
+@media (max-width: 520px) { .opinion { grid-template-columns: 1fr; } }
+.aff-box { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 24px; border-radius: 18px; border: 1px solid rgba(255,210,63,.4); background: rgba(255,210,63,.05); }
+.aff-box p { font-size: .9rem; color: var(--muted); }
+.aff-box p b { color: var(--ink); }
+.aff-box .cta { display: grid; gap: 8px; justify-items: center; }
+.aff-box small { font: 500 .7rem/1 var(--font-mono); color: var(--muted); letter-spacing: .06em; }
+@media (max-width: 680px) { .aff-box { grid-template-columns: 1fr; } .aff-box .cta { justify-items: stretch; } }
+
+/* Bloques de presentación de la formación */
+.promo { display: grid; gap: 18px; padding: clamp(14px, 3vw, 32px); border-bottom: 1px solid var(--line); }
+.summary { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.p-card { padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 10px; align-content: start; min-width: 0; }
+.p-card h4 { margin: 0; font: 500 1.3rem/1.15 var(--font-display); }
+.p-card p { color: #D7E0CF; font-size: .98rem; }
+.p-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: .92rem; color: var(--muted); }
+.p-card li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+.p-card li::before { font-weight: 700; }
+.yes li::before { content: "✓"; color: var(--ok); }
+.no li::before { content: "✕"; color: var(--bad); }
+.inc li::before { content: "◆"; color: var(--gold); font-size: .7rem; padding-top: 5px; }
+.p-card .src { font: 500 .66rem/1 var(--font-mono); letter-spacing: .06em; color: var(--gold); border: 1px dashed rgba(255,210,63,.5); border-radius: 99px; padding: 3px 7px; margin-left: 6px; white-space: nowrap; }
+.p-label { font: 500 .7rem/1.2 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--sage); }
+.cta-inline { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.cta-inline small { font: 500 .7rem/1.3 var(--font-mono); color: var(--muted); letter-spacing: .05em; }
+.offer { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 16px; }
+.price-card { border-color: rgba(255,210,63,.55); background: linear-gradient(180deg, rgba(255,210,63,.08), transparent 70%), var(--surface); }
+.price { font: 500 3rem/1 var(--font-display); color: var(--gold); text-shadow: 0 0 16px var(--glow); font-variant-numeric: tabular-nums; }
+.guarantee { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: center; padding: 12px; border-radius: 12px; background: rgba(155,212,122,.08); color: var(--ink); font-size: .9rem; }
+.guarantee b { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: rgba(155,212,122,.18); color: var(--ok); font: 700 .8rem/1 var(--font-mono); }
+.pc2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.videos-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 10px; }
+.videos-head h4 { margin: 0; font: 500 1.6rem/1.1 var(--font-display); }
+.vtag { font-size: .82rem; color: var(--muted); }
+.vgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.vcard {
+  position: relative; display: grid; align-content: end; gap: 4px; aspect-ratio: 4 / 5; max-width: 100%;
+  padding: 16px; border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink);
+  border: 1px solid var(--line);
+  background: radial-gradient(120% 80% at 50% 0%, rgba(126,154,88,.35), transparent 60%), linear-gradient(180deg, var(--surface-2), #0A130D);
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.vcard:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 0 30px -10px var(--glow); }
+.vcard .play { position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #1B1600; box-shadow: 0 0 22px var(--glow); }
+.vcard .play svg { width: 22px; height: 22px; margin-left: 3px; }
+.vcard .rec { top: 12px; left: 12px; }
+.vcard b { font: 500 1.4rem/1.1 var(--font-display); }
+.vcard span.s { font: 500 .7rem/1.3 var(--font-mono); color: var(--muted); }
+.vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.vq { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 6px 18px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+.vthumb { grid-row: 1 / 3; position: relative; display: block; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 12px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); transition: border-color .25s ease, box-shadow .25s ease; }
+.vthumb:hover { border-color: var(--gold); box-shadow: 0 0 24px -8px var(--glow); }
+.vthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vthumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,14,10,.4), transparent 35%, transparent 60%, rgba(8,14,10,.5)); }
+.vthumb .rec { z-index: 2; font-size: .6rem; }
+.vthumb .play { position: absolute; z-index: 2; left: 50%; top: 55%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #1B1600; box-shadow: 0 0 18px var(--glow); }
+.vthumb .play svg { width: 18px; height: 18px; margin-left: 2px; }
+.vq blockquote { margin: 0; font: italic 500 1.08rem/1.45 var(--font-display); }
+.vq figcaption { align-self: end; font-size: .85rem; color: var(--muted); }
+.vq figcaption b { color: var(--ink); }
+@media (max-width: 980px) { .vgrid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .vq { grid-template-columns: 96px minmax(0, 1fr); } .vq blockquote { font-size: 1rem; } }
+@media (max-width: 980px) { .summary { grid-template-columns: 1fr 1fr; } .summary .p-card:first-child { grid-column: 1 / -1; } .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .summary, .offer, .pc2 { grid-template-columns: 1fr; } .vcard { aspect-ratio: 16 / 10; } }
+
+.final { display: grid; gap: 16px; padding: clamp(18px, 3vw, 28px); border-radius: 20px; border: 1px solid var(--gold); background: linear-gradient(180deg, rgba(255,210,63,.07), transparent 50%), var(--surface); box-shadow: 0 0 50px -24px var(--glow); }
+.final-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
+.final-top h4 { margin: 8px 0 0; font: italic 500 clamp(1.8rem, 3.6vw, 2.5rem)/1.05 var(--font-display); color: var(--gold); text-shadow: 0 0 20px rgba(255,210,63,.3); }
+.final .pc2 .p-card { background: var(--bg-2); }
+.rec-text { font-size: 1.08rem; color: var(--ink); max-width: 70ch; }
+
+.sources { padding: 22px 24px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 10px; }
+.sources h4 { margin: 0 !important; font: 500 1.5rem/1.1 var(--font-display) !important; }
+.src-note { font-size: .85rem; color: var(--muted); }
+.sources ol { margin: 0; padding-left: 22px; display: grid; gap: 8px; font-size: .92rem; }
+.sources li a { color: var(--ink); text-decoration-color: rgba(255,210,63,.5); overflow-wrap: anywhere; }
+.sources li a:hover { color: var(--gold); }
+.stype { margin-left: 10px; font: 500 .66rem/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--sage); border: 1px solid var(--line); border-radius: 99px; padding: 4px 8px; white-space: nowrap; }
+.stype.aff { color: var(--gold); border-color: rgba(255,210,63,.45); }
+
+/* Comparativas (próximamente) */
+.soon { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: clamp(24px, 4vw, 40px); border-radius: 24px; border: 1px solid var(--line); background: var(--surface); }
+.soon h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.soon p { color: var(--muted); margin-top: 10px; max-width: 60ch; }
+.soon .vs { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; font: italic 500 2rem/1 var(--font-display); color: var(--gold); border: 1px solid var(--gold); box-shadow: 0 0 30px -8px var(--glow); }
+@media (max-width: 600px) { .soon { grid-template-columns: 1fr; } }
+
+footer .disclosure { flex-basis: 100%; max-width: 80ch; }
+footer .legal-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer .legal-links a { color: var(--muted); text-decoration: none; }
+footer .legal-links a:hover { color: var(--gold); }
+
+/* ---------- Contacto ---------- */
+.contact-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.contact-info { display: grid; gap: 18px; min-width: 0; }
+.contact-info ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.contact-info li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; color: var(--muted); font-size: .95rem; }
+.contact-info li b { color: var(--ink); display: block; }
+.contact-info li span:first-child { color: var(--gold); }
+.mail-box { display: grid; gap: 4px; padding: 16px 18px; border-radius: 14px; border: 1px dashed var(--line); }
+.mail-box span { font-size: .82rem; color: var(--muted); }
+.mail-box b { font: 500 1rem/1.4 var(--font-mono); overflow-wrap: anywhere; user-select: all; }
+.cform { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: clamp(20px, 4vw, 34px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-width: 0; }
+.cform .field { display: grid; gap: 7px; min-width: 0; }
+.cform .full { grid-column: 1 / -1; }
+.cform label { font-weight: 600; font-size: .9rem; }
+.cform input[type="text"], .cform input[type="email"], .cform select, .cform textarea {
+  width: 100%; font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+.cform input:focus, .cform select:focus, .cform textarea:focus { outline: none; border-color: var(--gold); }
+.cform textarea { min-height: 120px; resize: vertical; }
+.check { grid-column: 1 / -1; display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; font-size: .87rem; color: var(--muted); font-weight: 400 !important; }
+.check input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--gold); }
+.err { color: var(--bad); font-size: .82rem; min-height: 1em; }
+.cform .btn { grid-column: 1 / -1; }
+.cform .fine { grid-column: 1 / -1; font-size: .78rem; color: var(--muted); }
+.result { grid-column: 1 / -1; display: grid; gap: 12px; padding: 18px; border-radius: 14px; background: rgba(255,210,63,.07); border: 1px solid rgba(255,210,63,.4); }
+.result pre { margin: 0; white-space: pre-wrap; font: 500 .82rem/1.5 var(--font-mono); color: var(--ink); background: var(--bg); border-radius: 10px; padding: 12px; max-height: 220px; overflow: auto; }
+.result .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.result .btn { padding: 11px 18px; font-size: .9rem; grid-column: auto; }
+@media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .cform { grid-template-columns: 1fr; } }
+
+/* ---------- Legal ---------- */
+.legal { display: grid; gap: 12px; }
+.legal details { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.legal summary { cursor: pointer; padding: 18px 22px; font: 500 1.35rem/1.2 var(--font-display); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.legal summary::-webkit-details-marker { display: none; }
+.legal summary::after { content: "+"; color: var(--gold); font-family: var(--font-body); }
+.legal details[open] summary::after { content: "–"; }
+.legal .lbody { padding: 0 22px 22px; display: grid; gap: 12px; color: var(--muted); font-size: .93rem; max-width: 80ch; }
+.legal .lbody h5 { margin: 8px 0 0; font: 600 .95rem/1.3 var(--font-body); color: var(--ink); }
+.legal .lbody ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.legal .lbody b { color: var(--ink); }
+.todo { color: var(--gold); font-family: var(--font-mono); font-size: .85em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .track, .ticker-track, .rec::before { animation: none; }
+  .card, .btn, .chip, .f-card { transition: none; }
+}
+
+/* --- Añadidos para la versión multipágina --- */
+a.f-card { text-decoration: none; color: inherit; }
+.rv-info h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.rv-info h1 .h1-sub { display: block; margin-top: 8px; font-size: .5em; font-style: italic; color: var(--gold); }
+.page { padding-block: 28px 72px; }
+.page .review { margin-top: 18px; }
+.crumbs { font: 500 .78rem/1.4 var(--font-mono); color: var(--muted); }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.crumbs li + li::before { content: "›"; margin-right: 6px; color: var(--moss); }
+.crumbs a { color: var(--muted); text-decoration: none; } .crumbs a:hover { color: var(--gold); }
+.faq { padding: clamp(22px, 4vw, 40px); border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.faq h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 6px; }
+.faq .q { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 18px 22px; display: grid; gap: 8px; }
+.faq .q h3 { font-size: 1.25rem; line-height: 1.25; }
+.faq .q p, .faq .q li { color: var(--muted); font-size: .95rem; }
+.faq .q ul { margin: 0; padding-left: 18px; }
+.more { padding: clamp(22px, 4vw, 40px); border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.more h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+.more ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.legal-page h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 18px 0 28px; }
+
+/* Imagen de las formaciones analizadas */
+.card.info .thumb { display: block; width: calc(100% + 32px); max-width: none; margin: -16px -16px 2px; height: 210px; border-bottom: 1px solid var(--line); }
+.f-card .f-thumb { display: block; width: calc(100% + 44px); max-width: none; margin: -22px -22px 0; height: 260px; border-radius: 17px 17px 0 0; border-bottom: 1px solid var(--line); }
+.f-card .f-ph { margin: -22px -22px 0; height: 210px; border-radius: 17px 17px 0 0; border-bottom: 1px dashed rgba(255,210,63,.5); display: grid; place-items: center; color: var(--gold); font: 500 .75rem/1.4 var(--font-mono); background: var(--surface-2); }
+
+/* Imagen completa (sin recortar) con fondo difuminado de la propia imagen */
+.media-box { position: relative; overflow: hidden; background: #0A130D; }
+.media-box::before { content: ""; position: absolute; inset: -24px; background: var(--img) center / cover no-repeat; filter: blur(20px) brightness(.5) saturate(1.1); }
+.media-box img { position: relative; width: 100%; height: 100%; object-fit: contain; display: block; border: 0; border-radius: 0; box-shadow: none; aspect-ratio: auto; }
+.media-box.light { background: #F8F7F5; } .media-box.light::before { display: none; } .media-box.light img { padding: 16px; }
+/* =========================================================
+   TRADESIZE PRO · Calculadora de tamaño de posición
+   ========================================================= */
+.ts-top { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(20px, 4vw, 48px); align-items: center; margin: 18px 0 30px; }
+.ts-top .ts-head { margin: 0; }
+.ts-visual { position: relative; margin: 0; border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,210,63,.45); box-shadow: 0 0 60px -24px var(--glow); aspect-ratio: 16 / 10; background: var(--surface-2); }
+.ts-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ts-visual .chip-res { position: absolute; left: 14px; bottom: 14px; padding: 10px 14px; border-radius: 14px; background: rgba(13,24,16,.86); backdrop-filter: blur(6px); border: 1px solid rgba(255,210,63,.5); display: grid; gap: 2px; }
+.ts-visual .chip-res small { font: 500 .66rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--sage); }
+.ts-visual .chip-res b { font: 500 1.6rem/1 var(--font-display); color: var(--gold); }
+.ts-visual.phones { aspect-ratio: auto; border: 0; box-shadow: none; background: transparent; overflow: visible; display: flex; justify-content: center; align-items: center; min-height: 360px; }
+.phone { width: 44%; max-width: 230px; border-radius: 30px; padding: 7px; background: #05080F; border: 1px solid rgba(237,242,230,.18); box-shadow: 0 30px 60px -20px rgba(0,0,0,.7), 0 0 50px -20px var(--glow); position: relative; }
+.phone img { width: 100%; display: block; border-radius: 24px; }
+.phone.back { transform: rotate(-6deg) translate(18px, 22px); opacity: .9; }
+.phone.front { transform: rotate(4deg) translate(-18px, -6px); z-index: 1; }
+.phones .chip-res { left: auto; right: 0; bottom: 6px; z-index: 3; }
+@media (max-width: 920px) { .ts-top { grid-template-columns: 1fr; } }
+.ts [hidden] { display: none !important; }
+.ts-head { display: grid; gap: 14px; max-width: 760px; margin: 18px 0 30px; }
+.ts-head h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.ts-head p { color: var(--muted); font-size: 1.06rem; }
+.ts-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.ts-badge { font: 500 .72rem/1 var(--font-mono); letter-spacing: .06em; padding: 7px 11px; border-radius: 99px; border: 1px solid var(--line); color: var(--sage); }
+.ts-badge.gold { color: var(--gold); border-color: rgba(255,210,63,.5); }
+
+.ts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 920px) { .ts { grid-template-columns: 1fr; } }
+.ts-form { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: clamp(18px, 3vw, 28px); display: grid; gap: 18px; min-width: 0; }
+.ts-out { position: sticky; top: 86px; display: grid; gap: 14px; min-width: 0; }
+@media (max-width: 920px) { .ts-out { position: static; } }
+
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; padding: 4px; border-radius: 99px; background: var(--bg); border: 1px solid var(--line); }
+.seg button { font: 600 .92rem/1 var(--font-body); color: var(--muted); background: transparent; border: 0; border-radius: 99px; padding: 11px 10px; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.seg button[aria-pressed="true"] { background: var(--gold); color: #1B1600; box-shadow: 0 0 14px rgba(255,210,63,.35); }
+.seg.dir button[data-v="long"][aria-pressed="true"] { background: var(--ok); color: #0D1810; box-shadow: none; }
+.seg.dir button[data-v="short"][aria-pressed="true"] { background: var(--bad); color: #1A0C08; box-shadow: none; }
+.seg.small button { padding: 8px 10px; font-size: .82rem; }
+
+.fgroup { display: grid; gap: 12px; }
+.fgroup > .p-label { margin-bottom: -2px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .frow { grid-template-columns: 1fr; } }
+.fld { display: grid; gap: 6px; min-width: 0; }
+.fld label { font-weight: 600; font-size: .88rem; }
+.fld .hint { font-size: .78rem; color: var(--muted); }
+.fld .ferr { font-size: .8rem; color: var(--bad); }
+.fld .ferr:empty { display: none; }
+.ts input[type="text"], .ts select {
+  width: 100%; font: 500 1rem/1.2 var(--font-body); color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-variant-numeric: tabular-nums;
+}
+.ts input:focus, .ts select:focus { outline: none; border-color: var(--gold); }
+.ts .bad-input { border-color: var(--bad) !important; }
+.inline { display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 8px; }
+.ts details.costs { border: 1px dashed var(--line); border-radius: 14px; }
+.ts details.costs summary { cursor: pointer; padding: 13px 16px; font-weight: 600; font-size: .92rem; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
+.ts details.costs summary::-webkit-details-marker { display: none; }
+.ts details.costs summary::after { content: "+"; color: var(--gold); }
+.ts details.costs[open] summary::after { content: "–"; }
+.ts details.costs .in { padding: 0 16px 16px; display: grid; gap: 12px; }
+
+/* Resultado */
+.hero-res { border-radius: 22px; padding: clamp(20px, 3vw, 28px); border: 1px solid var(--gold); background: radial-gradient(500px 220px at 100% 0%, rgba(255,210,63,.14), transparent 70%), var(--surface); box-shadow: 0 0 50px -22px var(--glow); display: grid; gap: 10px; }
+.hero-res .big { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.hero-res .big b { font: 500 clamp(3rem, 7vw, 4.4rem)/1 var(--font-display); color: var(--gold); text-shadow: 0 0 22px var(--glow); font-variant-numeric: tabular-nums; }
+.hero-res .big span { font: 500 1.4rem/1 var(--font-display); color: var(--sage); }
+.hero-res .units { font: 500 .85rem/1.3 var(--font-mono); color: var(--muted); }
+.hero-res .say { padding: 12px 14px; border-radius: 12px; background: rgba(237,242,230,.05); font-size: .95rem; }
+.hero-res.empty-state { border-style: dashed; border-color: var(--line); box-shadow: none; background: var(--surface); color: var(--muted); }
+.hero-res.no-trade { border-color: var(--bad); box-shadow: none; }
+.hero-res.no-trade .big b { color: var(--bad); text-shadow: none; }
+
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile { padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--line); display: grid; gap: 4px; min-width: 0; }
+.tile .k { font-size: .8rem; color: var(--muted); }
+.tile .v { font: 600 1.25rem/1.2 var(--font-body); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.tile .s { font: 500 .72rem/1.3 var(--font-mono); color: var(--muted); }
+.tile.risk { border-left-color: var(--bad); } .tile.risk .v { color: var(--bad); }
+.tile.cost { border-left-color: var(--gold); } .tile.cost .v { color: var(--gold); }
+.tile.win { border-left-color: var(--ok); } .tile.win .v { color: var(--ok); }
+.tile.neutral { border-left-color: var(--moss); }
+.warns { display: grid; gap: 8px; }
+.warn { display: grid; grid-template-columns: 22px 1fr; gap: 8px; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,210,63,.45); background: rgba(255,210,63,.06); font-size: .88rem; }
+.warn::before { content: "⚠"; color: var(--gold); }
+.warn.err { border-color: rgba(240,138,110,.55); background: rgba(240,138,110,.08); }
+.warn.err::before { content: "✕"; color: var(--bad); }
+.ts details.breakdown { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.ts details.breakdown summary { cursor: pointer; padding: 13px 16px; font-weight: 600; font-size: .92rem; }
+.ts details.breakdown dl { margin: 0; padding: 0 16px 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 14px; font-size: .88rem; }
+.ts details.breakdown dt { color: var(--muted); }
+.ts details.breakdown dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.ts-note { font-size: .8rem; color: var(--muted); }
+.ts-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.ts-dl { margin-top: 48px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(18px, 4vw, 40px); align-items: center; padding: clamp(20px, 3.5vw, 34px); border-radius: 22px; border: 1px solid rgba(255,210,63,.45); background: radial-gradient(520px 240px at 0% 0%, rgba(255,210,63,.12), transparent 70%), var(--surface); }
+.ts-dl h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin-bottom: 8px; }
+.ts-dl > div > p { color: var(--muted); margin-bottom: 16px; }
+.ts-dl ol { margin: 18px 0 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: .92rem; color: var(--muted); }
+.ts-dl ol b { color: var(--ink); }
+.ts-qr { display: grid; gap: 8px; justify-items: center; text-align: center; }
+.ts-qr img { width: 168px; height: 168px; background: #fff; padding: 10px; border-radius: 14px; }
+.ts-qr small { font: 500 .7rem/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--sage); }
+@media (max-width: 720px) { .ts-dl { grid-template-columns: 1fr; } .ts-qr { display: none; } }
+.ts-how { margin-top: 56px; display: grid; gap: 16px; }
+.ts-how h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+.ts-how .pc3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 860px) { .ts-how .pc3 { grid-template-columns: 1fr; } }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"TradeSize Pro","url":"https://compratuformacion.com/herramientas/tradesize-pro/","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"es","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@id":"https://compratuformacion.com/#organization"},"description":"Calculadora gratuita de tamaño de posición para Forex y futuros."}
+</script>
+</head>
+<body>
+<script>document.addEventListener("error",e=>{if(e.target.tagName==="IMG")e.target.style.visibility="hidden"},true);</script>
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="../../" aria-label="Formalítica, inicio">
+      <svg viewBox="0 0 30 30" aria-hidden="true">
+        <rect x="2" y="17" width="7" height="11" rx="2" fill="#7E9A58"/>
+        <rect x="11.5" y="10" width="7" height="18" rx="2" fill="#BFD09C"/>
+        <rect x="21" y="2" width="7" height="26" rx="2" fill="#FFD23F"/>
+      </svg>
+      Formalítica
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../articulos/">Artículos</a></li>
+      <li><a href="../../#formaciones">Mentorías</a></li>
+      <li><a href="../../#formaciones">Formaciones analizadas</a></li>
+      <li><a href="../../#comparativas">Comparativas</a></li>
+    </ul>
+    <a class="btn btn-gold" href="../../#formaciones">Explorar</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta"><ol><li><a href="../../">Inicio</a></li><li><a href="../../#formaciones">Herramientas</a></li><li aria-current="page">TradeSize Pro</li></ol></nav>
+
+    <div class="ts-top">
+    <header class="ts-head">
+      <span class="eyebrow">Herramienta gratuita · TradeSize Pro</span>
+      <h1>Calcula tu tamaño de posición <em>sin pasarte de tu riesgo.</em></h1>
+      <p>Dinos tu capital, cuánto quieres arriesgar y dónde va tu Stop Loss. Te decimos cuántos lotes o contratos abrir, cuánto perderías si salta el stop y dónde poner los objetivos 1:1 y 1:2.</p>
+      <div class="ts-badges"><span class="ts-badge gold">Gratis</span><span class="ts-badge">Forex</span><span class="ts-badge">Futuros CME</span><span class="ts-badge">Sin registro</span></div>
+      <div class="ts-cta"><a class="btn btn-gold" href="#descargar-app">Descargar app Android</a><a class="btn btn-line" href="#calculadora">Usar en la web</a></div>
+    </header>
+      <figure class="ts-visual phones"><div class="phone back"><img src="../../img/app-futuros.webp" alt="TradeSize Pro calculando 2 contratos de MES"></div><div class="phone front"><img src="../../img/app-forex.webp" alt="TradeSize Pro calculando 0,05 lotes en EUR/USD"></div><span class="chip-res"><small>App TradeSize Pro</small><b>Forex y Futuros</b></span></figure>
+    </div>
+
+    <div class="ts" id="calculadora">
+      <!-- ============ FORMULARIO ============ -->
+      <form class="ts-form" id="ts-form" novalidate autocomplete="off">
+        <div class="seg" role="group" aria-label="Mercado" id="seg-market">
+          <button type="button" data-v="forex" aria-pressed="true">Forex</button>
+          <button type="button" data-v="futures" aria-pressed="false">Futuros</button>
+        </div>
+
+        <div class="fgroup">
+          <span class="p-label">Operación</span>
+          <div class="frow">
+            <div class="fld" data-only="forex">
+              <label for="f-pair">Par de divisas</label>
+              <select id="f-pair"></select>
+            </div>
+            <div class="fld" data-only="futures" hidden>
+              <label for="f-inst">Contrato</label>
+              <select id="f-inst"></select>
+              <span class="ferr" data-err="instrument"></span>
+            </div>
+            <div class="fld">
+              <span style="font-weight:600;font-size:.88rem">Dirección</span>
+              <div class="seg dir" role="group" aria-label="Dirección" id="seg-dir">
+                <button type="button" data-v="long" aria-pressed="true">Compra</button>
+                <button type="button" data-v="short" aria-pressed="false">Venta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <span class="p-label">Tu cuenta</span>
+          <div class="frow">
+            <div class="fld">
+              <label for="f-capital">Capital</label>
+              <input id="f-capital" type="text" inputmode="decimal" placeholder="1.000">
+              <span class="ferr" data-err="capital"></span>
+            </div>
+            <div class="fld">
+              <label for="f-acc">Divisa de la cuenta</label>
+              <select id="f-acc"></select>
+            </div>
+          </div>
+          <div class="fld">
+            <label for="f-risk">Riesgo por operación</label>
+            <div class="inline">
+              <input id="f-risk" type="text" inputmode="decimal" placeholder="10">
+              <div class="seg small" role="group" aria-label="Tipo de riesgo" id="seg-risk">
+                <button type="button" data-v="money" aria-pressed="true" id="risk-cur">€</button>
+                <button type="button" data-v="percent" aria-pressed="false">%</button>
+              </div>
+            </div>
+            <span class="hint" id="risk-eq"></span>
+            <span class="ferr" data-err="risk"></span>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <span class="p-label">Precios</span>
+          <div class="frow">
+            <div class="fld">
+              <label for="f-entry">Precio de entrada</label>
+              <input id="f-entry" type="text" inputmode="decimal" placeholder="1,08500">
+              <span class="ferr" data-err="entry"></span>
+            </div>
+            <div class="fld">
+              <label for="f-stop">Stop Loss</label>
+              <input id="f-stop" type="text" inputmode="decimal" placeholder="1,08300">
+              <span class="ferr" data-err="stopLoss"></span>
+            </div>
+          </div>
+          <div class="fld" id="rate-row" hidden>
+            <label for="f-rate" id="rate-label">Tipo de cambio</label>
+            <input id="f-rate" type="text" inputmode="decimal">
+            <span class="hint" id="rate-hint"></span>
+            <span class="ferr" data-err="conversionRate"></span>
+          </div>
+        </div>
+
+        <details class="costs" data-only="forex">
+          <summary>Costes de tu broker (opcional)</summary>
+          <div class="in">
+            <div class="fld">
+              <span style="font-weight:600;font-size:.88rem">Tipo de comisión</span>
+              <div class="seg small" role="group" aria-label="Tipo de comisión" id="seg-comm">
+                <button type="button" data-v="perLot" aria-pressed="true">Fija por lote</button>
+                <button type="button" data-v="percent" aria-pressed="false">% del nominal</button>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="fld"><label for="f-copen">Comisión de apertura</label><input id="f-copen" type="text" inputmode="decimal" placeholder="0"><span class="hint" id="copen-hint">Por lote, en la divisa de la cuenta</span></div>
+              <div class="fld"><label for="f-cclose">Comisión de cierre</label><input id="f-cclose" type="text" inputmode="decimal" placeholder="0"><span class="hint" id="cclose-hint">Por lote, en la divisa de la cuenta</span></div>
+            </div>
+            <div class="fld"><label for="f-spread">Spread habitual (pips)</label><input id="f-spread" type="text" inputmode="decimal" placeholder="0"><span class="hint">Se cobra una vez por operación. Pon 0 si tu precio de entrada ya lo incluye.</span></div>
+            <div class="frow">
+              <div class="fld"><label for="f-contract">Tamaño de contrato</label><input id="f-contract" type="text" inputmode="decimal" value="100000"><span class="ferr" data-err="contractSize"></span></div>
+              <div class="fld"><label for="f-step">Lote mínimo</label><input id="f-step" type="text" inputmode="decimal" value="0,01"><span class="ferr" data-err="lotStep"></span></div>
+            </div>
+            <span class="ferr" data-err="costs"></span>
+          </div>
+        </details>
+
+        <details class="costs" data-only="futures" hidden>
+          <summary>Costes de tu broker (opcional)</summary>
+          <div class="in">
+            <div class="frow">
+              <div class="fld"><label for="f-fcomm">Comisión por lado</label><input id="f-fcomm" type="text" inputmode="decimal" placeholder="0"><span class="hint" id="fcomm-hint">Por contrato, en USD</span></div>
+              <div class="fld"><label for="f-fextra">Otros costes por contrato</label><input id="f-fextra" type="text" inputmode="decimal" placeholder="0"><span class="hint">Tasas, deslizamiento previsto…</span></div>
+            </div>
+            <span class="hint" id="spec-hint"></span>
+          </div>
+        </details>
+        <button class="btn btn-line" type="button" id="ts-reset" style="justify-self:start;padding:11px 18px;font-size:.88rem">Borrar datos</button>
+      </form>
+
+      <!-- ============ RESULTADO ============ -->
+      <section class="ts-out" id="ts-out" aria-live="polite" style="padding:0"></section>
+    </div>
+
+    <section class="ts-dl" id="descargar-app">
+      <div>
+        <span class="eyebrow">App gratuita para Android</span>
+        <h2>Llévate TradeSize Pro <em>en el móvil.</em></h2>
+        <p>La misma calculadora, más un diario de operaciones y tus brokers guardados. Funciona sin conexión y sin registro.</p>
+        <a class="btn btn-gold" href="https://github.com/silvidocaballero-max/TRADESIZE-PRO/releases/latest/download/tradesize-pro.apk" rel="nofollow">Descargar APK para Android</a>
+        <ol>
+          <li>Toca el botón y abre el archivo <b>tradesize-pro.apk</b> cuando termine la descarga.</li>
+          <li>Android avisará de que viene de una fuente desconocida: toca <b>Ajustes</b> y activa <b>Permitir de esta fuente</b> para tu navegador.</li>
+          <li>Vuelve atrás y toca <b>Instalar</b>. Ya la tienes en tu pantalla de inicio.</li>
+        </ol>
+      </div>
+      <div class="ts-qr"><img src="../../img/qr-tradesize-apk.svg" alt="Código QR para descargar la app TradeSize Pro"><small>Escanéalo con<br>tu móvil Android</small></div>
+    </section>
+
+    <section class="ts-how" style="padding:0">
+      <h2>Cómo calcula, <em>sin trampas.</em></h2>
+      <div class="pc3">
+        <div class="p-card"><span class="p-label">Nunca te pasas</span><p>El tamaño se redondea siempre <b>hacia abajo</b> al lote mínimo (o a contratos enteros), así que la pérdida estimada nunca supera el riesgo que eliges.</p></div>
+        <div class="p-card"><span class="p-label">Costes incluidos</span><p>Si añades comisiones y spread, se suman al riesgo antes de calcular el tamaño. En futuros, si el stop no cae justo en un tick, se redondea al alza.</p></div>
+        <div class="p-card"><span class="p-label">Divisas</span><p>Si tu cuenta está en la divisa base del par se usa el propio precio (el menor, por prudencia). Si no forma parte del par, te pedimos el tipo de cambio.</p></div>
+      </div>
+      <p class="ts-note">Herramienta educativa. No es asesoramiento financiero. El deslizamiento (slippage) no está incluido y puede hacer que la pérdida real sea mayor. Especificaciones de futuros según CME Group (noviembre de 2026). Tus datos se guardan solo en este navegador.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Formalítica · J. Caballero · <a href="mailto:hola@compratuformacion.com" style="color:inherit">hola@compratuformacion.com</a></span>
+    <nav class="legal-links" aria-label="Legal"><a href="../../legal/#aviso-legal">Aviso legal</a><a href="../../legal/#privacidad">Privacidad</a><a href="../../legal/#afiliados">Afiliados</a><a href="../../legal/#resenas">Reseñas</a><a href="../../legal/#descargo">Descargo</a></nav>
+    <span>Imágenes ilustrativas.</span>
+    <p class="disclosure">Algunas formaciones pueden llevar un enlace de afiliado. Si compras a través de él, Formalítica recibe una comisión y tú pagas exactamente el mismo precio. Las comisiones no influyen en la puntuación: todas las formaciones se revisan con los mismos 20 puntos.</p>
+  </div>
+</footer>
+
+<script src="engine.js"></script>
+<script>
+(function () {
+  "use strict";
+  const T = window.TradeSize, F = T.fmt, $ = id => document.getElementById(id);
+  const KEY = "skillup-tradesize-v1";
+  const state = { market: "forex", direction: "long", riskMode: "money", commType: "perLot" };
+  const fields = ["f-pair", "f-inst", "f-capital", "f-acc", "f-risk", "f-entry", "f-stop", "f-rate", "f-copen", "f-cclose", "f-spread", "f-contract", "f-step", "f-fcomm", "f-fextra"];
+
+  // Opciones de los selectores
+  $("f-pair").innerHTML = T.PAIRS.map(p => `<option>${p}</option>`).join("");
+  $("f-inst").innerHTML = T.FUTURES.map(f => `<option value="${f.symbol}">${f.symbol} · ${f.name}</option>`).join("");
+  $("f-acc").innerHTML = T.CURRENCIES.map(c => `<option value="${c[0]}">${c[0]} · ${c[1]}</option>`).join("");
+
+  // Segmentados
+  function bindSeg(id, key) {
+    $(id).querySelectorAll("button").forEach(b => b.addEventListener("click", () => { state[key] = b.dataset.v; syncSeg(); run(); }));
+  }
+  function syncSeg() {
+    [["seg-market", "market"], ["seg-dir", "direction"], ["seg-risk", "riskMode"], ["seg-comm", "commType"]].forEach(([id, k]) =>
+      $(id).querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === state[k]))));
+    document.querySelectorAll("[data-only]").forEach(n => { n.hidden = n.dataset.only !== state.market; });
+    const pctComm = state.commType === "percent";
+    $("copen-hint").textContent = $("cclose-hint").textContent = pctComm ? "Porcentaje del valor nominal, por lado" : "Por lote, en la divisa de la cuenta";
+  }
+  bindSeg("seg-market", "market"); bindSeg("seg-dir", "direction"); bindSeg("seg-risk", "riskMode"); bindSeg("seg-comm", "commType");
+
+  // Guardado local (opcional)
+  function save() { try { const d = { state }; fields.forEach(f => d[f] = $(f).value); localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+  function load() {
+    try {
+      const d = JSON.parse(localStorage.getItem(KEY) || "null"); if (!d) return false;
+      Object.assign(state, d.state || {}); fields.forEach(f => { if (d[f] !== undefined) $(f).value = d[f]; }); return true;
+    } catch (e) { return false; }
+  }
+  if (!load()) { $("f-acc").value = "EUR"; }
+
+  const v = id => $(id).value.trim();
+  const isPos = s => { const q = T.Q.parse(s); return q && q.gt(T.Q.int(0)); };
+  const currentInst = () => { const p = T.FUTURES.find(f => f.symbol === v("f-inst")); return p ? Object.assign({}, p, { commissionPerSide: v("f-fcomm") || "0", extraCost: v("f-fextra") || "0" }) : null; };
+
+  function updateHelpers() {
+    const acc = v("f-acc"), sym = T.symbolOf(acc);
+    $("risk-cur").textContent = sym;
+    // Equivalencia en vivo dinero ↔ %
+    const cap = T.Q.parse(v("f-capital")), rv = T.Q.parse(v("f-risk"));
+    let eq = "";
+    if (cap && rv && cap.gt(T.Q.int(0))) {
+      eq = state.riskMode === "money" ? "Equivale al " + F.percent(rv.div(cap).mul(T.Q.int(100))) + " de tu capital"
+                                      : "Equivale a " + F.money(cap.mul(rv).div(T.Q.int(100)), acc);
+    }
+    $("risk-eq").textContent = eq;
+    // Tipo de cambio manual si hace falta
+    let need = null;
+    if (state.market === "forex" && T.forexNeedsRate(v("f-pair"), acc)) need = T.pairInfo(v("f-pair")).quote;
+    if (state.market === "futures") { const i = currentInst(); if (i && i.currency !== acc) need = i.currency; }
+    $("rate-row").hidden = !need;
+    if (need) {
+      $("rate-label").textContent = `Tipo de cambio ${acc}/${need}`;
+      $("rate-hint").textContent = `¿Cuántos ${need} equivalen a 1 ${acc}? Por ejemplo, 1 EUR = 1,08 USD → escribe 1,08.`;
+      $("f-rate").placeholder = "1,08";
+    }
+    const i = currentInst();
+    if (i) $("spec-hint").textContent = `${i.symbol}: tick de ${i.tickSize.replace(".", ",")} puntos = ${i.tickValue.replace(".", ",")} USD por contrato (CME).`;
+  }
+
+  function clearErrors() {
+    document.querySelectorAll("[data-err]").forEach(n => n.textContent = "");
+    document.querySelectorAll(".bad-input").forEach(n => n.classList.remove("bad-input"));
+  }
+  const FIELD_INPUT = { capital: "f-capital", risk: "f-risk", entry: "f-entry", stopLoss: "f-stop", conversionRate: "f-rate", contractSize: "f-contract", lotStep: "f-step", instrument: "f-inst" };
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  function tile(cls, k, val, sub) { return `<div class="tile ${cls}"><span class="k">${k}</span><span class="v">${val}</span>${sub ? `<span class="s">${sub}</span>` : ""}</div>`; }
+
+  function renderEmpty(msg) {
+    $("ts-out").innerHTML = `<div class="hero-res empty-state"><span class="eyebrow">Tamaño de posición</span><p>${msg}</p></div>`;
+  }
+
+  function render(r) {
+    const acc = r.account, dec = r.priceDecimals, dirLabel = r.direction === "long" ? "Compra" : "Venta";
+    const size = F.number(r.size, r.sizeDecimals);
+    const dist = r.distanceUnit === "pips" ? F.number(r.distance, 1, true) : F.number(r.distance, 0);
+    let hero;
+    if (r.canTrade) {
+      hero = `<div class="hero-res"><span class="eyebrow">${esc(r.instrument)} · ${dirLabel} · Tamaño de posición</span>
+        <div class="big"><b>${size}</b><span>${r.sizeUnit}</span></div>
+        ${r.units ? `<span class="units">${F.number(r.units, 0)} unidades</span>` : ""}
+        <p class="say">Si salta el Stop Loss perderías unos <b>${F.moneyUp(r.totalRisk, acc)}</b> (límite ${F.money(r.budget.money, acc)}).</p></div>`;
+    } else {
+      hero = `<div class="hero-res no-trade"><span class="eyebrow">${esc(r.instrument)} · ${dirLabel} · Tamaño de posición</span>
+        <div class="big"><b>0</b><span>${r.sizeUnit}</span></div>
+        <p class="say">Con ${F.money(r.budget.money, acc)} de riesgo no llega para abrir ${r.market === "forex" ? "el lote mínimo" : "un contrato"}. Necesitas arriesgar al menos <b>${F.moneyUp(r.minimumRiskNeeded, acc)}</b>, o acercar el Stop Loss.</p></div>`;
+    }
+    const tiles = [
+      tile("risk", "Riesgo monetario", F.moneyUp(r.totalRisk, acc), "Máximo: " + F.money(r.budget.money, acc)),
+      tile("risk", "Riesgo porcentual", F.percent(r.totalRiskPercent), "Máximo: " + F.percent(r.budget.percent)),
+      tile("neutral", "Precio de entrada", F.price(r.entry, dec), dirLabel),
+      tile("risk", "Stop Loss", F.price(r.stop, dec), "Pérdida por precio: " + F.moneyUp(r.stopLossLoss, acc)),
+      tile("neutral", "Distancia", `${dist} ${r.distanceUnit}`, F.price(r.priceDistance, dec) + " en precio"),
+      tile("cost", "Costes estimados", F.moneyUp(r.totalCosts, acc), r.brokerConfigured ? "Comisiones y spread" : "Sin comisiones configuradas"),
+      tile("win", "Take Profit 1:1", F.price(r.tp1, dec), "Neto est.: " + F.money(r.net1, acc)),
+      tile("win", "Take Profit 1:2", F.price(r.tp2, dec), "Neto est.: " + F.money(r.net2, acc))
+    ].join("");
+    const warns = r.warnings.concat(["El deslizamiento (slippage) no está incluido: la pérdida real puede ser mayor si el stop no se ejecuta en su precio."]);
+    const rows = r.details.map(d => {
+      const val = d[0] === "text" ? esc(d[2]) : d[0] === "money" ? F.money(d[2], acc, d[3] || 2) : F.number(d[2], d[3] || 2);
+      return `<dt>${d[1]}</dt><dd>${val}</dd>`;
+    }).join("");
+    $("ts-out").innerHTML = hero + `<div class="tiles">${tiles}</div>` +
+      `<div class="warns">${warns.map(w => `<div class="warn">${esc(w)}</div>`).join("")}</div>` +
+      `<details class="breakdown"><summary>Ver el desglose del cálculo</summary><dl>${rows}</dl></details>`;
+  }
+
+  function run() {
+    updateHelpers(); clearErrors(); save();
+    if (!v("f-capital") && !v("f-risk") && !v("f-entry") && !v("f-stop")) {
+      renderEmpty("Rellena tu capital, el riesgo, el precio de entrada y el Stop Loss. El resultado aparece aquí al momento.");
+      return;
+    }
+    const base = { direction: state.direction, capital: v("f-capital"), account: v("f-acc"), riskMode: state.riskMode, risk: v("f-risk"), entry: v("f-entry"), stop: v("f-stop"), rate: v("f-rate") };
+    try {
+      let r;
+      if (state.market === "forex") {
+        const costs = { contractSize: v("f-contract"), lotStep: v("f-step"), commissionOpen: v("f-copen") || "0", commissionClose: v("f-cclose") || "0", commissionType: state.commType, spreadPips: v("f-spread") || "0" };
+        costs.brokerConfigured = isPos(costs.commissionOpen) || isPos(costs.commissionClose) || isPos(costs.spreadPips);
+        r = T.calcForex(Object.assign(base, { pair: v("f-pair"), costs }));
+      } else {
+        r = T.calcFutures(Object.assign(base, { instrument: currentInst() }));
+      }
+      render(r);
+    } catch (e) {
+      const field = e.field;
+      const slot = field && document.querySelector(`[data-err="${field}"]`);
+      if (slot && !slot.closest("[hidden]")) slot.textContent = e.message;
+      if (FIELD_INPUT[field]) $(FIELD_INPUT[field]).classList.add("bad-input");
+      $("ts-out").innerHTML = `<div class="hero-res empty-state"><span class="eyebrow">Tamaño de posición</span><p>Revisa los datos para ver el resultado.</p></div><div class="warns"><div class="warn err">${esc(e.message)}</div></div>`;
+    }
+  }
+
+  // Solo dígitos y un separador decimal
+  fields.forEach(id => {
+    const el = $(id);
+    if (el.tagName === "INPUT") el.addEventListener("input", () => {
+      const clean = el.value.replace(/[^\d.,]/g, "").replace(/([.,])(?=.*[.,])/g, "");
+      if (clean !== el.value) el.value = clean;
+      run();
+    });
+    else el.addEventListener("change", run);
+  });
+  $("ts-reset").addEventListener("click", () => {
+    ["f-capital", "f-risk", "f-entry", "f-stop", "f-rate", "f-copen", "f-cclose", "f-spread", "f-fcomm", "f-fextra"].forEach(f => $(f).value = "");
+    $("f-contract").value = "100000"; $("f-step").value = "0,01";
+    run();
+  });
+  syncSeg(); run();
+})();
+</script>
+</body>
+</html>

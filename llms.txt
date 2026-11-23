@@ -1,0 +1,27 @@
+# Formalítica
+
+> Formalítica es una web independiente en español que analiza cursos, mentorías y herramientas online de pago antes de que el usuario las compre. Cada formación se revisa con una lista pública de 20 puntos (temario, autor, precio, garantía, condiciones de reembolso, soporte, reputación…) y la nota es puntos cumplidos sobre puntos analizados. Cada análisis termina con una opinión personal firmada por J. Caballero.
+
+- Idioma: español. Público: personas que dudan antes de pagar una formación online.
+- Algunas formaciones llevan enlace de afiliado: Formalítica recibe una comisión y el usuario paga el mismo precio. La comisión no influye en la nota.
+- Cada análisis indica la fecha de revisión y enlaza sus fuentes. Los precios y condiciones pueden cambiar: conviene comprobarlos en la página oficial.
+
+## Análisis publicados
+
+- [Máster en Cursos Online de Marcelo Rodríguez: opiniones y análisis](https://compratuformacion.com/formaciones/master-en-cursos-online-opiniones/): curso para crear y vender cursos online, 227 US$ en un pago. Nota: 16/20 puntos, recomendable con reservas. Revisado en noviembre de 2026.
+- [Cake Designer (Diseñador de Pasteles) de Manuel Guerrero: opiniones y análisis](https://compratuformacion.com/formaciones/cake-designer-opiniones/): curso de repostería y diseño de tartas, 228,69 € en un pago. Nota: 15/19 puntos analizados, recomendable con reservas. Revisado en noviembre de 2026.
+- [Insta Leads de Alex Just: opiniones y análisis](https://compratuformacion.com/formaciones/insta-leads-opiniones/): herramienta de captación de clientes en Instagram, 1.408,44 € en un pago. Nota: 14/20 puntos, recomendable con reservas. Revisado en noviembre de 2026.
+- [El Método Mikel Vázquez (trading Wyckoff y VSA): opiniones y análisis](https://compratuformacion.com/formaciones/metodo-mikel-vazquez-opiniones/): curso de trading con metodología Wyckoff y VSA, 108,90 €. Análisis en curso: todavía faltan puntos por verificar.
+
+## Herramientas
+
+- [TradeSize Pro, calculadora de tamaño de posición](https://compratuformacion.com/herramientas/tradesize-pro/): calculadora gratuita de lotes o contratos según capital, riesgo y Stop Loss, para Forex y futuros.
+
+## Sobre la web
+
+- [Portada](https://compratuformacion.com/): todas las formaciones analizadas, el método de los 20 puntos y el formulario de contacto.
+- [Contacto](https://compratuformacion.com/#contacto): contar una experiencia, hacer una consulta o proponer una formación para analizar.
+
+## Optional
+
+- [Información legal](https://compratuformacion.com/legal/): aviso legal, privacidad, aviso de afiliados, política de reseñas y descargo de responsabilidad.
